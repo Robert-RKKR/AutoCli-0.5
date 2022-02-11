@@ -19,6 +19,70 @@ class Logger:
         self.application = application
         self.user_message = user_message
 
+    def critical(self, message: str, task_id: str = None, correlated_object: object = None, **kwarg) -> Log:
+        """
+            Create a new log based on the following data:
+
+                Method attributes:
+                -----------------
+                message: string
+                    Logging message string value.
+                task_id: string
+                    Celery task ID.
+                correlated_object: object
+                    Object of device or other model that is supported.
+        """
+        # Run proccess of log and details log creation:
+        log = self._run(CRITICAL, message, task_id, correlated_object, kwarg)
+
+    def error(self, message: str, task_id: str = None, correlated_object: object = None, **kwarg) -> Log:
+        """
+            Create a new log based on the following data:
+
+                Method attributes:
+                -----------------
+                message: string
+                    Logging message string value.
+                task_id: string
+                    Celery task ID.
+                correlated_object: object
+                    Object of device or other model that is supported.
+        """
+        # Run proccess of log and details log creation:
+        log = self._run(ERROR, message, task_id, correlated_object, kwarg)
+
+    def warning(self, message: str, task_id: str = None, correlated_object: object = None, **kwarg) -> Log:
+        """
+            Create a new log based on the following data:
+
+                Method attributes:
+                -----------------
+                message: string
+                    Logging message string value.
+                task_id: string
+                    Celery task ID.
+                correlated_object: object
+                    Object of device or other model that is supported.
+        """
+        # Run proccess of log and details log creation:
+        log = self._run(WARNING, message, task_id, correlated_object, kwarg)
+
+    def info(self, message: str, task_id: str = None, correlated_object: object = None, **kwarg) -> Log:
+        """
+            Create a new log based on the following data:
+
+                Method attributes:
+                -----------------
+                message: string
+                    Logging message string value.
+                task_id: string
+                    Celery task ID.
+                correlated_object: object
+                    Object of device or other model that is supported.
+        """
+        # Run proccess of log and details log creation:
+        log = self._run(INFO, message, task_id, correlated_object, kwarg)
+
     def debug(self, message: str, task_id: str = None, correlated_object: object = None, **kwarg) -> Log:
         """
             Create a new log based on the following data:
