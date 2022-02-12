@@ -23,3 +23,15 @@ class LogAdmin(admin.ModelAdmin):
     ordering = (
         'pk', 'timestamp',
     )
+
+
+@admin.register(LogDetails)
+class LogDetailsAdmin(admin.ModelAdmin):
+
+    empty_value_display = '-None-'
+    list_display = (
+        'pk', 'log', 'name', 'value',
+    )
+    search_fields = (
+        'log', 'name', 'value',
+    )
