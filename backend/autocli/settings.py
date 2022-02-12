@@ -10,6 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+# Constants related to Language settings
+from django.utils.translation import gettext_lazy as _
+
+# Python Import:
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -42,6 +46,7 @@ INSTALLED_APPS = [
     # Third-Party Apps:
 
     # Local Apps:
+    'administration.apps.AdministrationConfig',
     'logger.apps.LoggerConfig',
 ]
 
@@ -74,6 +79,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'autocli.wsgi.application'
+
+
+# User model:
+
+AUTH_USER_MODEL = 'administration.Administrator'
+AUTH_GROUP_MODEL = 'administration.AdministratorGroup'
+AUTH_PROFILE_MODULE = 'administration.AdministratorGroup'
 
 
 # Database
@@ -113,7 +125,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
+
+LANGUAGES = (
+    ('en', _('English')),
+    ('de', _('German')),
+    ('pl', _('Polish')),
+)
 
 TIME_ZONE = 'UTC'
 
