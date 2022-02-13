@@ -21,6 +21,12 @@ from .administrator_group_model import Group
 
 class Administrator(BaseModel, AbstractBaseUser, PermissionsMixin):
 
+    class Meta:
+        
+        # Model name values:
+        verbose_name = _('Administrator')
+        verbose_name_plural = _('Administrators')
+
     # Model validators:
     username_validator = UsernameValueValidator()
     password_validator = PasswordValueValidator()
@@ -42,7 +48,6 @@ class Administrator(BaseModel, AbstractBaseUser, PermissionsMixin):
         verbose_name=_('Username'),
         help_text=_('Administrator username.'),
         max_length=32,
-        blank=False,
         unique=True,
         validators=[username_validator],
         error_messages={
@@ -71,8 +76,6 @@ class Administrator(BaseModel, AbstractBaseUser, PermissionsMixin):
         blank=True,
         null=True,
         error_messages={
-            'null': _('E-mail field is mandatory.'),
-            'blank': _('E-mail field is mandatory.'),
             'unique': _('Administrator with this e-mail already exists.'),
             'invalid': _('Enter the correct e-mail value.'),
         },
@@ -96,6 +99,7 @@ class Administrator(BaseModel, AbstractBaseUser, PermissionsMixin):
     middle_name = models.CharField(
         verbose_name=_('Middle name'),
         help_text=_('Administrator middle name.'),
+        max_length=32,
         blank=True,
         null=True,
         validators=[name_validator],
@@ -109,6 +113,7 @@ class Administrator(BaseModel, AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(
         verbose_name=_('Last name'),
         help_text=_('Administrator last name.'),
+        max_length=32,
         blank=True,
         null=True,
         validators=[name_validator],

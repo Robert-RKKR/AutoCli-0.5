@@ -1,3 +1,6 @@
+# Django language import:
+from django.utils.translation import gettext_lazy as _
+
 # Django Import:
 from django.db import models
 
@@ -6,6 +9,12 @@ from autocli.basemodel.basemodel import BaseMainModel
 
 
 class Settings(BaseMainModel):
+
+    class Meta:
+        
+        # Model name values:
+        verbose_name = _('Settings')
+        verbose_name_plural = _('Settings')
 
     # Administrator:
     administrator = models.OneToOneField(
