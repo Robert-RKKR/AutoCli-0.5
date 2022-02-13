@@ -47,6 +47,8 @@ INSTALLED_APPS = [
 
     # Local Apps:
     'administration.apps.AdministrationConfig',
+    'automation.apps.AutomationConfig',
+    'inventory.apps.InventoryConfig',
     'logger.apps.LoggerConfig',
 ]
 
