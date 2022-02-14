@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     # Third-Party Apps:
 
     # Local Apps:
-    'administration.apps.AdministrationConfig',
     'automation.apps.AutomationConfig',
     'inventory.apps.InventoryConfig',
     'logger.apps.LoggerConfig',
@@ -85,9 +84,9 @@ WSGI_APPLICATION = 'autocli.wsgi.application'
 
 # User model:
 
-AUTH_USER_MODEL = 'administration.Administrator'
-AUTH_GROUP_MODEL = 'administration.AdministratorGroup'
-AUTH_PROFILE_MODULE = 'administration.AdministratorGroup'
+# AUTH_USER_MODEL = 'administration.Administrator'
+# AUTH_GROUP_MODEL = 'administration.AdministratorGroup'
+# AUTH_PROFILE_MODULE = 'administration.AdministratorGroup'
 
 
 # Database

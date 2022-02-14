@@ -1,3 +1,6 @@
+# Django language import:
+from django.utils.translation import gettext_lazy as _
+
 # Django Import:
 from django.db import models
 
@@ -12,6 +15,16 @@ SEVERITY = (
 
 # Logger models:
 class Log(models.Model):
+
+    class Meta:
+        
+        # Model name values:
+        verbose_name = _('Log')
+        verbose_name_plural = _('Logs')
+
+        # Permission values:
+        default_permissions = ['read_only', 'read_write']
+        permissions = []
 
     # Timestamp:
     timestamp = models.DateTimeField(auto_now_add=True)

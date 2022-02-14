@@ -3,6 +3,8 @@ from django.utils.translation import gettext_lazy as _
 
 # Django Import:
 from django.db import models
+import random
+import string
 
 # Managers Import:
 from .managers import ActiveManager
@@ -12,6 +14,28 @@ from .managers import NotDeleted
 # Validators Import:
 from .validators import DescriptionValueValidator
 from .validators import NameValueValidator
+
+
+def primary_key_generator():
+    """ Generate primary key. """
+
+    # Create template string: 
+    template_string = string.ascii_lowercase + string.digits
+
+    # Primary key:
+    primary_key = ''
+
+    # primary key generator:
+    for row in range(1, 31):
+        if row % 5 == 0:
+            if row != 30:
+                primary_key = primary_key + random.choice(template_string) + '-'
+            else:
+                primary_key = primary_key + random.choice(template_string)
+        else:
+            primary_key = primary_key + random.choice(template_string)
+
+    return primary_key
 
 
 # Base models class:
@@ -29,6 +53,14 @@ class BaseModel(models.Model):
 
         # Abstract class value:
         abstract = True
+
+    # Model ID:
+    id = models.CharField(
+        primary_key=True,
+        max_length=35,
+        editable=False,
+        default=primary_key_generator()
+    )
 
     # Model data time information:
     created = models.DateTimeField(

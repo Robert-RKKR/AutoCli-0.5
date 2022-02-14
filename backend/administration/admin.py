@@ -20,7 +20,7 @@ class AdministratorAdmin(admin.ModelAdmin):
 
     empty_value_display = '-None-'
     list_display = (
-        'username', 'first_name', 'last_name', 'admin', 'superuser',
+        'pk', 'username', 'first_name', 'last_name', 'admin', 'superuser',
     )
     list_filter = (
         'groups', 'admin', 'superuser',
@@ -35,6 +35,10 @@ class AdministratorAdmin(admin.ModelAdmin):
         (_('Basic administrator information'), {
             'classes': ('wide', 'extrapretty'),
             'fields': ('username', 'email')
+        }),
+        (_('Administrator password'), {
+            'classes': ('collapse',),
+            'fields': ('password',),
         }),
         (_('Administrator access'), {
             'classes': ('wide', 'extrapretty'),

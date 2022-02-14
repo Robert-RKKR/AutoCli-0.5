@@ -2,8 +2,8 @@
 from django.urls import path
 
 # Application Import:
-from .views.log_view import test
+from .views.log_view import Test
 
 urlpatterns = [
-    path('test/', test, name='test'),
+    path('test/', Test.as_view(), name='test'),
 ]
