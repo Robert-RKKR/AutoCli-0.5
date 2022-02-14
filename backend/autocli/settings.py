@@ -148,6 +148,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (BASE_DIR.joinpath('static'),)
 STATIC_ROOT = BASE_DIR.joinpath('staticfiles')
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -159,6 +160,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             BASE_DIR.joinpath('templates'),
+            BASE_DIR.joinpath('static'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -171,6 +173,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 
 # Default primary key field type

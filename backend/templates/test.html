@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
 
     {{ output }}
     <p>-----------</p>
@@ -11,5 +9,4 @@
         <p>{{ log }}</p>
     {% endfor %}
 
-</body>
-</html>
+{% endblock %}
