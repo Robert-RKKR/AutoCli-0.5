@@ -35,6 +35,7 @@ def primary_key_generator():
         else:
             primary_key = primary_key + random.choice(template_string)
 
+    # Return generated primary key:
     return primary_key
 
 

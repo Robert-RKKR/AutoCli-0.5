@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # Local Apps:
     'automation.apps.AutomationConfig',
     'inventory.apps.InventoryConfig',
+    'settings.apps.SettingsConfig',
     'logger.apps.LoggerConfig',
 ]
 

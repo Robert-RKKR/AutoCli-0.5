@@ -2,8 +2,8 @@
 from django.contrib import admin
 
 # Models Imports:
-from logger.models.log_details_model import LogDetails
-from logger.models.log_model import Log
+from .models.log_details_model import LogDetails
+from .models.log_model import Log
 
 
 # Admin classes:
