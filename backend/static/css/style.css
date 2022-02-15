@@ -1,0 +1,85 @@
+ /*   ------------------------------------   */
+/*   ----     MAIN PAGE SETTINGS     ----   */
+body {
+    display: flex;
+    flex-direction: row;
+    background: var(--color_background_page);
+    height: 100vh;
+    color: var(--color_font_gray_dark);
+    font-family: 'Alegreya Sans SC', sans-serif;
+    text-decoration: none;
+}
+
+
+    /*   -----   PAGE SCROLL   -----   */
+    ::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--color_strong_blue);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--color_page_left_two);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--color_page_left_two);
+    }
+
+
+    /*   -----   PAGE LEFT   -----   */
+    #page-left {
+        background: var(--color_page_left_two);
+        width: var(--page_left);
+        color: var(--color_font_white);
+    }
+
+    #page-header {
+        background: var(--color_page_left_one);
+        height: var(--page_distance_top);
+    }
+
+
+    /*   -----   PAGE RIGHT   -----   */
+    #page-right {
+        width: 100%;
+    }
+
+
+        /*   -----   PAGE TOP   -----   */
+        #page-top {
+            background: var(--color_page_top);
+            height: var(--page_distance_top);
+        }
+
+
+        /*   -----   PAGE BOTTOM   -----   */
+        #page-bottom {
+            height: var(--page_distance_bottom);
+            overflow-y: scroll;
+        }
+
+
+
+
+
+
+/*   ---------------------------   */
+/*   ----     PAGE LEFT     ----   */
+#page-left {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#page-left svg, img {
+    fill: var(--color_font_white);
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+}
+
+#page-left a {
+    color: var(--color_font_white);
+}
