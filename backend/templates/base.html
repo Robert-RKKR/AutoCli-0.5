@@ -20,6 +20,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/class.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/mobile.css' %}">
 
         <!-- Favicon links -->
         <link rel="apple-touch-icon" sizes="180x180" href="{% static 'ico/favicon/apple-touch-icon.png' %}">
@@ -165,18 +166,14 @@
 
             <!-- Main page language panel -->
             <div id="page-left-bottom">
-                <div id="language">
-                    {% if user.is_authenticated %}
-                        {% get_current_language as LANGUAGE_CODE %}
-                        {% get_available_languages as LANGUAGES %}
-                        {% get_language_info_list for LANGUAGES as languages %}
-                        {% for lang in languages %}
-                        <a href="/{{ lang.code }}{{ request }}" class="click-animation">
-                            <img class="menu-svg" src="{% static 'ico/flags/' %}{{ lang.code }}.svg" alt="{{ lang.code }}">
-                        </a>
-                        {% endfor %}
-                    {% endif %}
-                </div>
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for lang in languages %}
+                <a href="/{{ lang.code }}{{ request }}" class="click-animation">
+                    <img class="menu-svg" src="{% static 'ico/flags/' %}{{ lang.code }}.svg" alt="{{ lang.code }}">
+                </a>
+                {% endfor %}
             </div>
 
         </div>

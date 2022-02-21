@@ -36,3 +36,11 @@
     --box_padding_half: 5px;
     --box_padding_full_and_half: 20px;
 }
+
+.display-flex {
+    display: flex !Important;
+}
+
+.collapse {
+    display: none;
+}

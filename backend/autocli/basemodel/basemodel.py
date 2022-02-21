@@ -1,5 +1,6 @@
 # Django language import:
 from django.utils.translation import gettext_lazy as _
+from django.db import IntegrityError
 
 # Django Import:
 from django.db import models
@@ -48,10 +49,6 @@ class BaseModel(models.Model):
         verbose_name = _('Model')
         verbose_name_plural = _('Models')
 
-        # Permission values:
-        default_permissions = ['read_only', 'read_write']
-        permissions = []
-
         # Abstract class value:
         abstract = True
 
@@ -60,7 +57,6 @@ class BaseModel(models.Model):
         primary_key=True,
         max_length=35,
         editable=False,
-        default=primary_key_generator()
     )
 
     # Model data time information:
@@ -111,6 +107,31 @@ class BaseModel(models.Model):
             self.deleted = True
             self.save()
 
+    # Override default Sace method:
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.pk = primary_key_generator()
+
+        success = False
+        failures = 0
+        while not success:
+            try:
+                super(BaseModel, self).save(*args, **kwargs)
+            except IntegrityError:
+                failures += 1
+                if failures > 5:
+                    # Raise error in case of fails of quintuple save proccess:
+                    raise('Object save make a problem.')
+                else:
+                    # In case of auto-generate key duplication, regenerate key value:
+                    self.id = primary_key_generator()
+            else:
+                # Mark save process success:
+                 success = True
+
+        # Return success value:
+        return success
+
 
 class BaseMainModel(BaseModel):
 
@@ -119,10 +140,6 @@ class BaseMainModel(BaseModel):
         # Model name values:
         verbose_name = _('Model')
         verbose_name_plural = _('Models')
-
-        # Permission values:
-        default_permissions = ['read_only', 'read_write']
-        permissions = []
 
         # Abstract class value:
         abstract = True
@@ -133,6 +150,8 @@ class BaseMainModel(BaseModel):
 
     # Main model values:
     name = models.CharField(
+        verbose_name=_('Name'),
+        help_text=_('Xxx.'),
         max_length=32,
         blank=False,
         unique=True,
@@ -140,11 +159,13 @@ class BaseMainModel(BaseModel):
         error_messages={
             'null': 'Name field is mandatory.',
             'blank': 'Name field is mandatory.',
-            'unique': f'{Meta.verbose_name} with this name already exists.',
-            'invalid': 'Enter the correct name value. It must contain 4 to 32 digits, letters and special characters -, _ or spaces.',
+            'unique': 'Object with this name already exists.',
+            'invalid': 'Enter the correct name value. It must contain 3 to 32 digits, letters or special characters -, _ or spaces.',
         },
     )
     description = models.CharField(
+        verbose_name=_('Description'),
+        help_text=_('Xxx.'),
         max_length=256, default=f'{Meta.verbose_name} description.',
         validators=[description_validator],
         error_messages={
@@ -154,20 +175,4 @@ class BaseMainModel(BaseModel):
 
     # Model representation:
     def __str__(self) -> str:
-        return f"{self.pk}: {self.name}"
-
-
-class BaseSubModel(BaseModel):
-
-    class Meta:
-        
-        # Model name values:
-        verbose_name = _('Model')
-        verbose_name_plural = _('Models')
-
-        # Permission values:
-        default_permissions = ['read_only', 'read_write']
-        permissions = []
-
-        # Abstract class value:
-        abstract = True
+        return self.name
