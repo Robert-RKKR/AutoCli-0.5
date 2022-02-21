@@ -3,6 +3,10 @@
 
 {% block content %}
 
-    {{ output }}
+    <p>{{ output }}</p>
+    <p>--------------------</p>
+    {% for object in objects %}
+        <p>{{ object }}</p>
+    {% endfor %}
 
 {% endblock %}

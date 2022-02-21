@@ -14,8 +14,6 @@ class BaseView(View, Pagination, Filtration):
 
     # Class attributes:
     template = None
-    model = None
-    queryset = None
     page_name = None
     panel = None
     page_data = {}
@@ -27,26 +25,10 @@ class BaseView(View, Pagination, Filtration):
             'page_name': self._get_page_name()
         }
 
-    def _collect_object(self):
+    def _collect_object(self, request):
         """ Collect all object using filter and pagination classes. """
 
-        pass
-
-    def _collect_get_parameters(self, request) -> dict:
-        """ Collect all GET request parameters. """
-
-        # Return dictionary:
-        all_parameters = {}
-
-        # Request dictionary:
-        req = request.GET
-
-        # Collect all parameters:
-        for parameter_key in req:
-            all_parameters[parameter_key] = req[parameter_key]
-
-        # Return dictionary:
-        return all_parameters
+        return self._get_filtered(request)
 
     def _get_page_name(self, text_to_display: str=None, plural: bool=False) -> str:
         """ Return given page name if provided, or generate standard page name. """

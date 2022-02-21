@@ -48,7 +48,7 @@ class DeviceAdmin(admin.ModelAdmin):
 
     empty_value_display = '-None-'
     list_display = (
-        'pk', 'name', 'hostname', 'ssh_status', 'https_status',
+        'pk', 'name', 'hostname', 'active', 'ssh_status', 'https_status',
     )
     list_filter = (
         'device_type', 'ssh_status', 'https_status', 'certificate',

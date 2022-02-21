@@ -16,6 +16,10 @@ class ListView(BaseView):
         # Generate default page name if not provided:
         self.page_data['page_name'] = self._get_page_name(_('Display all'), True)
 
+        # Return all collected objects:
+        self.page_data['objects'] = self._collect_object(request)
+
+
         self.page_data['output'] = self._collect_get_parameters(request)
 
         return render(request, self._get_attribute(self.template, 'base_views/list_view.html'), self.page_data)
