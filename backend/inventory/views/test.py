@@ -28,7 +28,7 @@ class TestListView(ListView):
 
     model = Device
     paginate_by = 2
-    filter_by = 'all'
+    filter_by = ['name', 'hostname']
     queryset = Device.objects.filter(active=True).order_by('name')
 
 

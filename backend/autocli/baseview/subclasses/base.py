@@ -19,13 +19,13 @@ class Base:
         # Return dictionary:
         return all_parameters
 
-    def _collect_model_attributes(self):
+    def _collect_model_attributes(self) -> tuple:
         """ Collect all model attributes. """
 
         # Return all model attributes:
         return self.model._meta.get_fields()
 
-    def _collect_specific_model_attribute(self, attribute_name: str):
+    def _collect_specific_model_attribute(self, attribute_name: str) -> object:
         """ Collect specific model attribute. """
 
         # Collect attributes names:
@@ -36,7 +36,7 @@ class Base:
             if attribute == attribute_name:
                 return attributes[attribute]
 
-    def _collect_model_attributes_names(self):
+    def _collect_model_attributes_names(self) -> list:
         """ Collect all model attributes names. """
 
         # Attributes names list:

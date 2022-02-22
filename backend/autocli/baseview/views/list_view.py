@@ -20,6 +20,6 @@ class ListView(BaseView):
         self.page_data['objects'] = self._collect_object(request)
 
 
-        self.page_data['output'] = self._collect_get_parameters(request)
+        self.page_data['output'] = self._collect_model_attributes_names()
 
         return render(request, self._get_attribute(self.template, 'base_views/list_view.html'), self.page_data)
