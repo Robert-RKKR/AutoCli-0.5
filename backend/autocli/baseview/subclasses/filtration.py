@@ -1,4 +1,4 @@
-# Django Import: est RKKR
+# Django Import:
 from django.db.models import QuerySet
 
 # Base Import:
