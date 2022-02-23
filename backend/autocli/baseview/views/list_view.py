@@ -19,6 +19,8 @@ class ListView(BaseView):
         # Return all collected objects:
         self.page_data['objects'] = self._collect_object(request)
 
+        self._get_filter_template()
+
 
         self.page_data['output'] = self._collect_model_attributes_names()
 

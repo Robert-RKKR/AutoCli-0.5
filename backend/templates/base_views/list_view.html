@@ -6,7 +6,7 @@
     <p>{{ output }}</p>
     <p>--------------------</p>
     {% for object in objects %}
-        <p>{{ object }}</p>
+        <p>{{ object.pk }} - {{ object.name }} - {{ object.hostname }}</p>
     {% endfor %}
 
 {% endblock %}

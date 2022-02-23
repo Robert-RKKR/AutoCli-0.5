@@ -10,8 +10,22 @@ class Filtration(Base):
     filter_by = None
     queryset = None
 
-    def _get_filtered(self, request):
-        """ Xxx """
+    def _get_filter_template(self):
+        """ Xxx. """
+
+        self.page_data['filter'] = {
+            'hostname': {
+                'name': 'Hostname',
+                'type': 'input',
+                'input_type': 'search'
+            }
+        }
+
+    def _get_filtered_object(self, request):
+        """ 
+            Reterns all filtered object, in provided order.
+            Based on provided request URL.
+        """
 
         # Check if filter_by list is valid:
         if not isinstance(self.filter_by, list):
@@ -47,13 +61,48 @@ class Filtration(Base):
 
             # Collect GET request parameters:
             parameters = self._collect_get_parameters(request)
-            valid_parametars = self._parameter_verification(parameters)
+            valid_parametars = self._all_valid_filter_parameters(parameters)
 
-            # Return all filtered object:
-            return self.model.objects.filter(**valid_parametars)
+            # Order parameters:
+            order_list = self._valid_order_parameter(parameters)
 
-    def _parameter_verification(self, parameters) -> dict:
-        """ Verified if provided parameters are valid. """
+            if len(order_list) > 0:
+
+                # Return all filtered object in provided order:
+                return self.model.objects.filter(**valid_parametars).order_by(*order_list)
+
+            else:
+
+                # Return all filtered object:
+                return self.model.objects.filter(**valid_parametars)
+
+    def _valid_order_parameter(self, parameters) -> list:
+        """ Returns all valid order parameters in list format. """
+
+        # All order parameters list:
+        order_list = []
+        # Collect all model attributes names:
+        model_attributes = self._collect_model_attributes_names()
+
+        # Loop thru all provided parametars:
+        for parameter in parameters:
+            # Find all order parameters:
+            if parameter == 'order':
+                # Parameter value:
+                value = parameters[parameter]
+                # Add provided order if valid:
+                if value in model_attributes:
+                    # Add parameter to all parameter list:
+                    order_list.append(value)
+
+        # Return all parameters list:
+        return order_list
+
+    def _all_valid_filter_parameters(self, parameters) -> dict:
+        """ 
+            Returns all valid filter parameters in dictionary format.
+                {'attribute name': 'filter value'}
+        """
 
         def check_key_parameter(key_name, key_parameter: str) -> bool:
             """ Check if key parameter is valid. """

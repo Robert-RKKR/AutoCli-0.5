@@ -222,6 +222,29 @@
                 <!-- All page content -->
                 <div id="page-content">
 
+                    <!-- Search panel -->
+                    {% if filter %}
+                        <form action="get">
+
+                            <div class="grid-box margin-half margin-boundary" id="model-search">
+                                <input class="input-field search" type="search" name="object_name">
+                                <button class="click-animation" type="submit">
+                                    <img src="{% static 'ico/main/search.svg' %}" alt="Search">
+                                </button>
+                                <div class="button action-button click-animation" id="model-filter-button" >
+                                    <img src="{% static 'ico/main/filter.svg' %}" alt="Filter">
+                                </div>
+                            </div>
+
+                            <div id="model-filter" class="collapse">
+                                <div class="grid-box margin-half margin-boundary">
+                                    <p>RKKR</p>
+                                </div>
+                            </div>
+
+                        </form>
+                    {% endif %}
+
                     {% block content %}{% endblock content %}
 
                 </div>

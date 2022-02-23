@@ -16,7 +16,6 @@ class BaseView(View, Pagination, Filtration):
     template = None
     page_name = None
     panel = None
-    page_data = {}
 
     # GET request response page:
     def get(self, request, *args, **kwargs):
@@ -28,7 +27,7 @@ class BaseView(View, Pagination, Filtration):
     def _collect_object(self, request):
         """ Collect all object using filter and pagination classes. """
 
-        return self._get_filtered(request)
+        return self._get_filtered_object(request)
 
     def _get_page_name(self, text_to_display: str=None, plural: bool=False) -> str:
         """ Return given page name if provided, or generate standard page name. """

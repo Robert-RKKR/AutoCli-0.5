@@ -2,6 +2,7 @@
 class Base:
 
     model = None
+    page_data = {}
 
     def _collect_get_parameters(self, request) -> dict:
         """ Collect all GET request parameters. """
@@ -35,6 +36,9 @@ class Base:
             # Collect only one specific model attribute:
             if attribute == attribute_name:
                 return attributes[attribute]
+
+        # Return False if provided attribute name is not exist in provided model:
+        return False
 
     def _collect_model_attributes_names(self) -> list:
         """ Collect all model attributes names. """
