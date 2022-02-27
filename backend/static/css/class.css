@@ -8,6 +8,7 @@
         --color_page_top: #8cd3aa;
         --color_page_background: #e1eaeb;
         --color_box_background: #ffffff;
+        --color_gray_background: #efefef;
 
         /* Main font colors */
         --color_font_white: #ffffff;
@@ -44,3 +45,29 @@
 .collapse {
     display: none;
 }
+
+.grid-box {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: var(--box_padding_full);
+    background: var(--color_box_background);
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+
+.grid-padding {
+    padding: var(--box_padding_full);
+}
+
+
+/*   -----   BUTTON   -----   */
+
+
+    /*   -----   CLICK ANIMATION   -----   */
+    .click-animation {
+        transition: transform 100ms;
+        cursor: pointer;
+    }
+
+    .click-animation:active {
+        transform: scale(0.9);
+    }

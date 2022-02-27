@@ -21,6 +21,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/class.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/mobile.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/content.css' %}">
 
         <!-- Favicon links -->
         <link rel="apple-touch-icon" sizes="180x180" href="{% static 'ico/favicon/apple-touch-icon.png' %}">
@@ -223,22 +224,40 @@
                 <div id="page-content">
 
                     <!-- Search panel -->
-                    {% if filter %}
-                        <form action="get">
+                    {% if filters %}
+                        <form action="post">
 
-                            <div class="grid-box margin-half margin-boundary" id="model-search">
+                            <div class="grid-box" id="model-search">
                                 <input class="input-field search" type="search" name="object_name">
                                 <button class="click-animation" type="submit">
                                     <img src="{% static 'ico/main/search.svg' %}" alt="Search">
                                 </button>
-                                <div class="button action-button click-animation" id="model-filter-button" >
+                                <div class="click-animation" id="model-filter-button" >
                                     <img src="{% static 'ico/main/filter.svg' %}" alt="Filter">
                                 </div>
                             </div>
 
                             <div id="model-filter" class="collapse">
-                                <div class="grid-box margin-half margin-boundary">
-                                    <p>RKKR</p>
+                                <div class="grid-box grid-padding gird-filter">
+                                    {% for filter in filters %}
+                                            <div>
+                                                <label for="{{ filter.name }}">{{ filter.verbose_name }}: </label>
+                                                {% if filter.type == "text" %}
+                                                    <input type="text" id="{{ filter.name }}" name="{{ filter.name }}" placeholder="{{ filter.help_text }}">
+                                                    {% elif filter.type == "bool" %}
+                                                        <input type="checkbox" id="{{ filter.name }}" name="{{ filter.name }}" placeholder="{{ filter.help_text }}">
+                                                    {% elif filter.type == "list" %}
+                                                        <p>{{ options }}</p>
+                                                        <select name="{{ filter.name }}" id="{{ filter.name }}">
+                                                            {% if filter.options %}
+                                                                {% for option in filter.options %}
+                                                                    <option value="{{ filter.name }}">{{ option }}</option>
+                                                                {% endfor %}
+                                                            {% endif %}
+                                                        </select>
+                                                {% endif %}
+                                            </div>
+                                    {% endfor %}
                                 </div>
                             </div>
 

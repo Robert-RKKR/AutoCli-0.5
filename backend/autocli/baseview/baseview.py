@@ -24,10 +24,17 @@ class BaseView(View, Pagination, Filtration):
             'page_name': self._get_page_name()
         }
 
-    def _collect_object(self, request):
+    def _collect_objects(self, request):
         """ Collect all object using filter and pagination classes. """
 
-        return self._get_filtered_object(request)
+        # Collect filtered and ordered object from database:
+        collected_objects = self._get_filtered_objects(request)
+
+        # Pagination objects cutting:
+        #33333
+
+        # Return collected object:
+        return collected_objects
 
     def _get_page_name(self, text_to_display: str=None, plural: bool=False) -> str:
         """ Return given page name if provided, or generate standard page name. """

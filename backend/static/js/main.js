@@ -1,4 +1,4 @@
-// Sidebar (Page left) open / close acction:
+// Sidebar (Page left) open / close action:
 var closeActiveElement = document.getElementById("page-left");
 var closeToggleButton = document.getElementById("sidebar-close");
 
@@ -6,7 +6,7 @@ closeToggleButton.onclick = function () {
     closeActiveElement.classList.toggle("display-flex");
 };
 
-// Sidebar (Page left) menu close / open acction with cookies:
+// Sidebar (Page left) menu close / open action with cookies:
 var toggleButtons = document.getElementsByClassName("collapse-menu-link");
 let cookies = document.cookie.split(";");
 
@@ -47,3 +47,16 @@ for(let i=0; i<toggleButtons.length; i++) {
 
     });
 }
+
+// Filter close action:
+var activeElement = document.getElementById("model-filter");
+var toggleButton = document.getElementById("model-filter-button");
+
+toggleButton.onclick = function () {
+
+    if(activeElement.classList.contains("collapse") === false) {
+        activeElement.classList.add("collapse");
+    } else {
+        activeElement.classList.remove("collapse");
+    }
+};
