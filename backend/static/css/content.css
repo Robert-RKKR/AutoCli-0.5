@@ -81,7 +81,7 @@
 
 
     /*   -----   MODEL SEARCH   -----   */
-    #model-search input {
+    #content-search input {
         padding: var(--box_padding_half) 20px;
         color: var(--color_font_gray);
         font-size: 1.1em;
@@ -89,7 +89,7 @@
         width: 100%;
     }
 
-    #model-search button {
+    #content-search button {
         padding: var(--box_padding_full);
         padding-left: 20px;
         padding-right: 20px;
@@ -97,11 +97,11 @@
         background: var(--color_gray_background);
     }
 
-    #model-search button:hover {
+    #content-search button:hover {
         background: var(--color_strong_red);
     }
 
-    #model-search div {
+    #content-search div {
         padding: var(--box_padding_full);
         padding-left: 20px;
         padding-right: 20px;
@@ -109,34 +109,49 @@
         background: var(--color_gray_background);
     }
 
-    #model-search div:hover {
+    #content-search div:hover {
         background: var(--color_strong_red);
     }
 
 
     /*   -----   MODEL FILTER   -----   */
-    .gird-filter {
+    #content-filter {
         justify-content: space-around;
     }
 
-    .gird-filter input {
+    #content-filter input {
         background: var(--color_gray_background);
         padding: var(--box_padding_half);
         border: none;
     }
     
-    .gird-filter select {
+    #content-filter select {
         background: var(--color_gray_background);
         padding: var(--box_padding_half);
         color: var(--color_font_gray);
         border: none;
     }
 
-    .gird-filter > div {
+    #content-filter > div {
         display: flex;
         align-items: center;
     }
 
-    .gird-filter > div > label {
+    #content-filter > div > label {
         margin-right: var(--box_padding_full);
     }
+
+
+    /*   -----   PAGINATOR   -----   */
+    #content-paginator > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px var(--box_padding_full);
+    }
+
+    .paginator-section img {
+        height: 45px;
+        width: 45px;
+    }
+

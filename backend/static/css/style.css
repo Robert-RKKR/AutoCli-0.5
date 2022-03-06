@@ -137,7 +137,7 @@ body {
         background: var(--color_page_left_two);
     }
 
-    /*   -----   COLAPSE MENU   -----   */
+    /*   -----   COLLAPSE MENU   -----   */
     .collapse-menu-link::after {
         content: " >";
     }

@@ -2,7 +2,7 @@
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic.detail import DetailView
-from django.views.generic import View
+from django.views.generic import View, ListView
 from django.shortcuts import render
 from django import forms
 
@@ -14,8 +14,17 @@ from logger.models.log_model import Log
 from inventory.models.device_model import Device
 from logger.logger import Logger
 
-from autocli.baseview.views.list_view import ListView
 
+class TestClass(ListView):
+
+    panel = None
+    
+    # GET request response page:
+    def get(self, request, *args, **kwargs):
+        super().get(request, *args, **kwargs)
+        context = self.get_context_data()
+        context['panel'] = self.panel
+        return self.render_to_response(context)
 
 class AddForm(forms.ModelForm):
 
@@ -24,25 +33,22 @@ class AddForm(forms.ModelForm):
         fields = ('active', 'name', 'hostname')
 
 
-class TestListView(ListView):
+class TestListView(TestClass):
 
     model = Device
-    paginate_by = 2
-    list_filter = ['device_type']
-    text_filter = ['name', 'hostname']
-    boolean_filter = ['active']
-    queryset = Device.objects.filter(active=True).order_by('name')
+    template_name = 'base_views/list_view.html'
+    paginate_by = 5
+    panel = ['RKKR']
 
 
 class TestCreateView(CreateView):
     template_name = 'add.html'
     model = Device
     form_class = AddForm
-    success_url = '/add/'
+    success_url = '/'
 
 
 class Test(View, PermissionRequiredMixin):
-
 
     permission_required = 'log.read_write'
 

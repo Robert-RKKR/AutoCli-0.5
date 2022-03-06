@@ -1,12 +1,63 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 
     <p>{{ output }}</p>
     <p>--------------------</p>
-    {% for object in objects %}
+    {% for object in object_list %}
         <p>{{ object.pk }} - {{ object.name }} - {{ object.hostname }}</p>
     {% endfor %}
+
+    </br></br>
+
+    {{ panel }}
+
+    </br></br>
+
+    {% if page_obj %}
+        <div id="content-paginator">
+            <div class="grid-box">
+                {% if page_obj.has_previous %}
+                    <div class="paginator-section">
+                        <a href="?page=1" label="{% translate 'First page' %}">
+                            <img id="check-item-button" class="action-button click-animation" src="{% static 'ico/main/left-arrow1.svg' %}" alt="Ico">
+                        </a>
+                        <a href="?page={{ page_obj.previous_page_number }}" label="{% translate 'Precious page' %}">
+                            <img id="check-item-button" class="action-button click-animation" src="{% static 'ico/main/left-arrow2.svg' %}" alt="Ico">
+                        </a>
+                    </div>
+                {% else %}
+                <div class="paginator-section">
+                    <a label="{% translate 'This is first page' %}">
+                        <img id="check-item-button" class="action-button click-animation" src="{% static 'ico/main/left-arrow3.svg' %}" alt="Ico">
+                    </a>
+                </div>
+                {% endif %}
+
+                <span class="current">
+                    <p>{% translate 'Page' %} {{ page_obj.number }} {% translate 'of' %} {{ page_obj.paginator.num_pages }}</p>
+                </span>
+
+                {% if page_obj.has_next %}
+                    <div class="paginator-section">
+                        <a href="?page={{ page_obj.next_page_number }}" label="{% translate 'Next page' %}">
+                            <img id="check-item-button" class="action-button click-animation" src="{% static 'ico/main/right-arrow2.svg' %}" alt="Ico">
+                        </a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}" label="{% translate 'Last page' %}">
+                            <img id="check-item-button" class="action-button click-animation" src="{% static 'ico/main/right-arrow1.svg' %}" alt="Ico">
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="paginator-section">
+                        <a label="{% translate 'No more pages' %}">
+                            <img id="check-item-button" class="action-button click-animation" src="{% static 'ico/main/right-arrow3.svg' %}" alt="Ico">
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
 
 {% endblock %}

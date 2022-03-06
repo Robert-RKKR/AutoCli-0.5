@@ -58,6 +58,31 @@
     padding: var(--box_padding_full);
 }
 
+/*   -----   LABEL   -----   */
+[label] {
+    position: relative;
+}
+
+[label]::before {
+    content: attr(label);
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    background: var(--color_light_blue);
+    color: var(--color_font_gray_dark);
+    padding: 5px;
+    border: 2px #ccc solid;
+    transition: .5s ease-in-out;
+    transition-property: opacity, visibility;
+}
+
+[label]:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
 
 /*   -----   BUTTON   -----   */
 
