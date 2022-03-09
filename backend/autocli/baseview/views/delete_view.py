@@ -1,8 +1,11 @@
 # Base view Import:
-from ..baseview import BaseView
+from ..subclasses.base_view import BaseView
+
+# Django view Import:
+from django.views.generic.edit import DeleteView
 
 
 # Delete View class:
-class DeleteView:
+class DeleteView(BaseView, DeleteView):
 
     pass

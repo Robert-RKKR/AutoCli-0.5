@@ -1,8 +1,12 @@
 # Base view Import:
-from ..baseview import BaseView
+from ..subclasses.base_view import BaseView
+
+# Django view Import:
+from django.views.generic.edit import UpdateView
 
 
 # Update View class:
-class UpdateView:
+class UpdateView(BaseView, UpdateView):
 
-    pass
+    # Pre-populated attributes:
+    success_url = '/'

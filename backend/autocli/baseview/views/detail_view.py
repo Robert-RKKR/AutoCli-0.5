@@ -1,8 +1,11 @@
 # Base view Import:
-from ..baseview import BaseView
+from ..subclasses.base_view import BaseView
 
+# Django view Import:
+from django.views.generic import DetailView
 
-# Detai lView class:
-class DetailView:
+# Detail lView class:
+class DetailView(BaseView, DetailView):
 
-    pass
+    # Pre-populated attributes:
+    template_name = 'base_views/detail_view.html'

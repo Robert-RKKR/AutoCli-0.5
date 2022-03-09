@@ -1,8 +1,13 @@
 # Base view Import:
-from ..baseview import BaseView
+from ..subclasses.base_view import BaseView
+
+# Django view Import:
+from django.views.generic.edit import CreateView
 
 
 # Create View class:
-class CreateView:
+class CreateView(BaseView, CreateView):
 
-    pass
+    # Pre-populated attributes:
+    template_name = 'base_views/create_view.html'
+    success_url = '/'
