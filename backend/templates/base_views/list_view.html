@@ -34,11 +34,15 @@
         </form>
     {% endif %}
 
-    {% for object in object_list %}
-        <div class="grid-box grid-padding">
-            <p>{{ object.pk }} - {{ object.name }} - {{ object.hostname }}</p>
-        </div>
-    {% endfor %}
+    {% if no_search_result %}
+        <img src="{% static 'ico/main/hidden.svg' %}" alt="No output">
+    {% else %}
+        {% for object in object_list %}
+            <div class="grid-box grid-padding">
+                <p>{{ object.pk }} - {{ object.name }} - {{ object.hostname }}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
 
     <!-- Pagination panel -->
     {% if page_obj %}

@@ -7,8 +7,12 @@
     <!-- Add form -->
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit">
+        {% for field in form %}
+            {% if field.html_name != 'name__contains' %}
+                {{ field.label_tag }} {{ field }}
+            {% endif %}
+        {% endfor %}
+        <input type="submit" name="submit">
     </form>
 
 {% endblock %}
