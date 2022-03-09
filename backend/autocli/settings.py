@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third-Party Apps:
+    'django_filters',
 
     # Local Apps:
     'automation.apps.AutomationConfig',

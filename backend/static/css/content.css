@@ -80,7 +80,29 @@
 /*   ----      TOOLS      ----   */
 
 
-    /*   -----   MODEL SEARCH   -----   */
+    /*   -----   PANEL BAR   -----   */
+    #content-panel img {
+        height: 30px;
+        width: 30px;
+    }
+
+    #content-panel a {
+        padding: var(--box_padding_full)
+    }
+
+    #content-panel > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .action-group {
+        display: flex;
+        flex-direction: row;
+    }
+
+
+    /*   -----   SEARCH BAR   -----   */
     #content-search input {
         padding: var(--box_padding_half) 20px;
         color: var(--color_font_gray);
@@ -114,7 +136,7 @@
     }
 
 
-    /*   -----   MODEL FILTER   -----   */
+    /*   -----   FILTER BAR   -----   */
     #content-filter {
         justify-content: space-around;
     }
@@ -142,16 +164,20 @@
     }
 
 
-    /*   -----   PAGINATOR   -----   */
+    /*   -----   PAGINATOR BAR   -----   */
     #content-paginator > div {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0px var(--box_padding_full);
+    }
+
+    .paginator-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .paginator-section img {
-        height: 45px;
-        width: 45px;
+        width: 30px;
     }
 

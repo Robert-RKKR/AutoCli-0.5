@@ -4,36 +4,62 @@
 
 {% block content %}
 
-    <p>{{ output }}</p>
-    <p>--------------------</p>
+    <!-- Search panel -->
+    {% if filter %}
+        <form method="GET">
+            {% for field in filter.form %}
+
+                {% if field.html_name == 'name__contains' %}
+                    <div class="grid-box" id="content-search">
+                        {{ field }}
+                        <button class="click-animation" type="submit">
+                            <img src="{% static 'ico/main/search.svg' %}" alt="Search">
+                        </button>
+                        <div class="click-animation" id="content-filter-button" >
+                            <img src="{% static 'ico/main/filter.svg' %}" alt="Filter">
+                        </div>
+                    </div>
+                {% endif %}
+
+            {% endfor %}
+                
+            <div id="content-filter" class="grid-box grid-padding gird-filter collapse">
+                {% for field in filter.form %}
+                    {% if field.html_name != 'name__contains' %}
+                        {{ field.label_tag }} {{ field }}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            
+        </form>
+    {% endif %}
+
     {% for object in object_list %}
-        <p>{{ object.pk }} - {{ object.name }} - {{ object.hostname }}</p>
+        <div class="grid-box grid-padding">
+            <p>{{ object.pk }} - {{ object.name }} - {{ object.hostname }}</p>
+        </div>
     {% endfor %}
 
-    </br></br>
-
-    {{ panel }}
-
-    </br></br>
-
+    <!-- Pagination panel -->
     {% if page_obj %}
         <div id="content-paginator">
             <div class="grid-box">
+                
                 {% if page_obj.has_previous %}
                     <div class="paginator-section">
-                        <a href="?page=1" label="{% translate 'First page' %}">
-                            <img id="check-item-button" class="action-button click-animation" src="{% static 'ico/main/left-arrow1.svg' %}" alt="Ico">
+                        <a href="?page=1{{ query_string }}" label="{% translate 'First page' %}" class="action-button click-animation">
+                            <img src="{% static 'ico/main/left-arrow1.svg' %}" alt="Ico">
                         </a>
-                        <a href="?page={{ page_obj.previous_page_number }}" label="{% translate 'Precious page' %}">
-                            <img id="check-item-button" class="action-button click-animation" src="{% static 'ico/main/left-arrow2.svg' %}" alt="Ico">
+                        <a href="?page={{ page_obj.previous_page_number }}{{ query_string }}" label="{% translate 'Precious page' %}" class="action-button click-animation">
+                            <img src="{% static 'ico/main/left-arrow2.svg' %}" alt="Ico">
                         </a>
                     </div>
                 {% else %}
-                <div class="paginator-section">
-                    <a label="{% translate 'This is first page' %}">
-                        <img id="check-item-button" class="action-button click-animation" src="{% static 'ico/main/left-arrow3.svg' %}" alt="Ico">
-                    </a>
-                </div>
+                    <div class="paginator-section">
+                        <a label="{% translate 'This is first page' %}" class="action-button click-animation">
+                            <img src="{% static 'ico/main/left-arrow3.svg' %}" alt="Ico">
+                        </a>
+                    </div>
                 {% endif %}
 
                 <span class="current">
@@ -42,20 +68,21 @@
 
                 {% if page_obj.has_next %}
                     <div class="paginator-section">
-                        <a href="?page={{ page_obj.next_page_number }}" label="{% translate 'Next page' %}">
-                            <img id="check-item-button" class="action-button click-animation" src="{% static 'ico/main/right-arrow2.svg' %}" alt="Ico">
+                        <a href="?page={{ page_obj.next_page_number }}{{ query_string }}" label="{% translate 'Next page' %}" class="action-button click-animation">
+                            <img src="{% static 'ico/main/right-arrow2.svg' %}" alt="Ico">
                         </a>
-                        <a href="?page={{ page_obj.paginator.num_pages }}" label="{% translate 'Last page' %}">
-                            <img id="check-item-button" class="action-button click-animation" src="{% static 'ico/main/right-arrow1.svg' %}" alt="Ico">
+                        <a href="?page={{ page_obj.paginator.num_pages }}{{ query_string }}" label="{% translate 'Last page' %}" class="action-button click-animation">
+                            <img src="{% static 'ico/main/right-arrow1.svg' %}" alt="Ico">
                         </a>
                     </div>
                 {% else %}
                     <div class="paginator-section">
-                        <a label="{% translate 'No more pages' %}">
-                            <img id="check-item-button" class="action-button click-animation" src="{% static 'ico/main/right-arrow3.svg' %}" alt="Ico">
+                        <a label="{% translate 'No more pages' %}" class="action-button click-animation">
+                            <img src="{% static 'ico/main/right-arrow3.svg' %}" alt="Ico">
                         </a>
                     </div>
                 {% endif %}
+
             </div>
         </div>
     {% endif %}

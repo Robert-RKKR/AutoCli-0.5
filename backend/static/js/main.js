@@ -49,8 +49,8 @@ for(let i=0; i<toggleButtons.length; i++) {
 }
 
 // Filter close action:
-var activeElement = document.getElementById("model-filter");
-var toggleButton = document.getElementById("model-filter-button");
+var activeElement = document.getElementById("content-filter");
+var toggleButton = document.getElementById("content-filter-button");
 
 toggleButton.onclick = function () {
 

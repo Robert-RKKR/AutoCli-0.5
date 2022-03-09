@@ -39,13 +39,15 @@
 }
 
 .display-flex {
-    display: flex !Important;
+    display: flex!Important;
 }
 
 .collapse {
-    display: none;
+    display: none!Important;
 }
 
+
+/*   -----   GRID   -----   */
 .grid-box {
     display: flex;
     flex-direction: row;
@@ -58,6 +60,50 @@
     padding: var(--box_padding_full);
 }
 
+.grid-panel {
+    height: 30px;
+}
+
+
+/*   -----   PANEL   -----   */
+.panel-button:hover {
+    background: red;
+}
+
+
+/*   -----   ACTION BUTTON   -----   */
+.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--box_padding_full);
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+}
+
+.action-button:hover {
+    background: var(--color_strong_red);
+}
+
+
+/*   -----   PADDING / MARGIN   -----   */
+.left-padding {
+    padding-left: var(--box_padding_half);
+}
+
+.right-padding {
+    padding-right: var(--box_padding_half);
+}
+
+.left-margin {
+    margin-left: var(--box_padding_half);
+}
+
+.right-margin {
+    margin-right: var(--box_padding_half);
+}
+
 /*   -----   LABEL   -----   */
 [label] {
     position: relative;
@@ -68,13 +114,14 @@
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    top: 20px;
+    top: 40px;
     left: 0;
     background: var(--color_light_blue);
     color: var(--color_font_gray_dark);
     padding: 5px;
     border: 2px #ccc solid;
     transition: .5s ease-in-out;
+    transition-delay: 1s;
     transition-property: opacity, visibility;
 }
 
