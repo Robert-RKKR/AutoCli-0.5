@@ -69,7 +69,7 @@
 
                             <!-- Sub-menu item -->
                             <li>
-                                <a href="#" class="submenu-link click-animation">
+                                <a href="{% url 'device-list' %}" class="submenu-link click-animation">
                                     <svg class="menu-svg" viewBox="0 -192 469.33333 469" xmlns="http://www.w3.org/2000/svg"><path d="m437.332031.167969h-405.332031c-17.664062 0-32 14.335937-32 32v21.332031c0 17.664062 14.335938 32 32 32h405.332031c17.664063 0 32-14.335938 32-32v-21.332031c0-17.664063-14.335937-32-32-32zm0 0"/></svg>
                                     <span>{% translate "Devices" %}</span>
                                 </a>
@@ -243,15 +243,17 @@
                         <div id="content-panel">
                             <div class="grid-box">
                                 <div class="action-group">
-                                    <a href="#" class="action-button click-animation">
-                                        <img src="{% static 'ico/main/grid.svg' %}" alt="Ico">
-                                    </a>
-                                    <a href="#" class="action-button click-animation">
-                                        <img src="{% static 'ico/main/list.svg' %}" alt="Ico">
-                                    </a>
+                                    {% if list_box_view %}
+                                        <a href="#" class="action-button click-animation">
+                                            <img src="{% static 'ico/main/grid.svg' %}" alt="Ico">
+                                        </a>
+                                        <a href="#" class="action-button click-animation">
+                                            <img src="{% static 'ico/main/list.svg' %}" alt="Ico">
+                                        </a>
+                                    {% endif %}
                                 </div>
                                 <div class="action-group">
-                                    {% for action in panel %}
+                                    {% for action in panel.action_objects %}
                                         <a href="{% url 'device-create' %}" class="action-button click-animation">
                                             <img src="{% static 'ico/main/' %}{{ action.ico }}.svg" alt="X">
                                         </a>

@@ -26,3 +26,4 @@ class TestCreateView(CreateView):
 
     model = Device
     form_class = DeviceForm
+    plural_panel = True

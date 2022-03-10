@@ -5,14 +5,16 @@
 {% block content %}
 
     <!-- Add form -->
-    <form method="post">
-        {% csrf_token %}
-        {% for field in form %}
-            {% if field.html_name != 'name__contains' %}
-                {{ field.label_tag }} {{ field }}
-            {% endif %}
-        {% endfor %}
-        <input type="submit" name="submit">
-    </form>
+    <div class="grid-box grid-padding create-view">
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                {% if field.html_name != 'name__contains' %}
+                    {{ field.label_tag }} {{ field }}
+                {% endif %}
+            {% endfor %}
+            <input type="submit" name="submit">
+        </form>
+    </div>
 
 {% endblock %}

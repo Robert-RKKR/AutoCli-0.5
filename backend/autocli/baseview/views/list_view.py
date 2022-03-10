@@ -58,7 +58,6 @@ class ListView(BaseView, ListView):
         # Return validated query string with & symbol or blank string:
         return '&' + validated_query_string if (validated_query_string and not self.no_search_result) else ''
     
-    # GET request response page:
     def get(self, request, *args, **kwargs):
         """ Overwrite get function. """
 
@@ -70,19 +69,3 @@ class ListView(BaseView, ListView):
         context['panel'] = self._collect_panel_data()
         # Return HTML response:
         return self.render_to_response(context)
-
-    def _collect_panel_data(self):
-        """ Genetate panel data. """
-
-        # 
-        collected_panel_data = []
-        model_name = self.model._meta.object_name.lower() + '-create'
-
-        if self.plural_panel is True:
-            data = {
-                'ico': 'create',
-                'link': model_name
-            }
-            collected_panel_data.append(data)
-
-        return collected_panel_data
