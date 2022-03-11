@@ -2,11 +2,11 @@
 from ..subclasses.base_view import BaseView
 
 # Django view Import:
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView as DjangoView
 
 
 # Update View class:
-class UpdateView(BaseView, UpdateView):
+class UpdateView(BaseView, DjangoView):
 
     # Pre-populated attributes:
     success_url = '/'

@@ -15,6 +15,7 @@ class DeviceListView(ListView):
     model = Device
     filterset = DeviceFilter
     plural_panel = True
+    list_box_view = True
 
 
 class DeviceDetailView(DetailView):

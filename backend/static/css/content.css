@@ -186,6 +186,154 @@
 /*   ----   PAGE CONTENT  ----   */
 
 
+     /*   ---------------------------   */
+    /*   ----     MODEL GRID    ----   */
+    #content-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: var(--box_padding_full);
+    }
+
+    
+        /*   ----    GRID ITEM    ----   */
+        .model-item {
+            display: flex;
+            flex-direction: column;
+            background: var(--color_box_background);
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+            width: 100%;
+        }
+
+        .model-item-status {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .model-item-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .model-item-header img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .model-item-body {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+
+            /*   -----   ITEM BALL   -----   */
+            .ball-box {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .ball {
+                border-radius: 50%;
+                width: var(--box_padding_full);
+                height: var(--box_padding_full);
+                margin: 0px 10px 15px 0px;
+            }
+        
+            .ball-active {
+                background: var(--color_strong_green);
+            }
+        
+            .ball-inactive {
+                background: var(--color_strong_red);
+            }
+
+    
+     /*   ---------------------------   */
+    /*   ----    MODEL TABLE    ----   */
+    .table {
+        margin: 0px var(--model_padding) 20px var(--model_padding);
+        box-sizing: border-box;
+	}
+
+    .table table {
+        width: 100%;
+        border-color: #dee2e6;
+        border-collapse: collapse;
+        background: var(--color_background_grid);
+    }
+
+    .table table td, th {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .table table th {
+        font-weight: bold;
+    }
+
+    .table table th a {
+        text-decoration: none;
+        color: var(--color_font_gray_dark);
+    }
+
+        /*   ----     TABLE BLUE     ----   */
+        .table-blue thead {
+            background: var(--color_strong_blue);
+        }
+
+        .table-blue tbody tr:nth-child(even) {
+            background: var(--color_light_blue);
+        }
+        
+
+        /*   ----     TABLE GREEN     ----   */
+        .table-green thead {
+            background: var(--color_strong_green);
+        }
+
+        .table-green tbody tr:nth-child(even) {
+            background: var(--color_light_green);
+        }
+
+        
+        /*   ----     TABLE RED     ----   */
+        .table-red thead {
+            background: var(--color_strong_red);
+        }
+
+        .table-red tbody tr:nth-child(even) {
+            background: var(--color_light_red);
+        }
+
+        
+        /*   ----     TABLE YELLOW     ----   */
+        .table-yellow thead {
+            background: var(--color_strong_yellow);
+        }
+
+        .table-yellow tbody tr:nth-child(even) {
+            background: var(--color_light_yellow);
+        }
+
+        
+        /*   ----     TABLE GRAY     ----   */
+        .table-gray thead {
+            background: var(--color_strong_gray);
+        }
+
+        .table-gray tbody tr:nth-child(even) {
+            background: var(--color_light_gray);
+        }
+
+
+
     /*   -----   CREATE VIEW   -----   */
     .create-view {
         

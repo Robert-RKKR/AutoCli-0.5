@@ -5,18 +5,18 @@ import re
 from ..subclasses.base_view import BaseView
 
 # Django view Import:
-from django.views.generic import ListView
+from django.views.generic import ListView as DjangoView
 
 
 # List View class:
-class ListView(BaseView, ListView):
+class ListView(BaseView, DjangoView):
 
     # Blank value attributes:
     filterset = None
 
     # Pre-populated attributes:
     template_name = 'base_views/list_view.html'
-    paginate_by = 5
+    paginate_by = 9
 
     def get_queryset(self):
         """ Overwrite get_queryset function. """

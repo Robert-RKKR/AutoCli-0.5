@@ -238,31 +238,6 @@
                         {% endfor %}
                     {% endif %}
 
-                    <!-- Model modify panel -->
-                    {% if panel %}
-                        <div id="content-panel">
-                            <div class="grid-box">
-                                <div class="action-group">
-                                    {% if list_box_view %}
-                                        <a href="#" class="action-button click-animation">
-                                            <img src="{% static 'ico/main/grid.svg' %}" alt="Ico">
-                                        </a>
-                                        <a href="#" class="action-button click-animation">
-                                            <img src="{% static 'ico/main/list.svg' %}" alt="Ico">
-                                        </a>
-                                    {% endif %}
-                                </div>
-                                <div class="action-group">
-                                    {% for action in panel.action_objects %}
-                                        <a href="{% url 'device-create' %}" class="action-button click-animation">
-                                            <img src="{% static 'ico/main/' %}{{ action.ico }}.svg" alt="X">
-                                        </a>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                    {% endif %}
-
                     {% block content %}{% endblock content %}
 
                 </div>

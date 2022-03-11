@@ -4,6 +4,31 @@
 
 {% block content %}
 
+    <!-- Model modify panel -->
+    {% if panel %}
+        <div id="content-panel">
+            <div class="grid-box">
+                <div class="action-group">
+                    {% if panel.list_box_view %}
+                        <a href="{{ current_url_no_display }}&display=1" class="action-button click-animation">
+                            <img src="{% static 'ico/main/grid.svg' %}" alt="Ico">
+                        </a>
+                        <a href="{{ current_url_no_display }}&display=2" class="action-button click-animation">
+                            <img src="{% static 'ico/main/list.svg' %}" alt="Ico">
+                        </a>
+                    {% endif %}
+                </div>
+                <div class="action-group">
+                    {% for action in panel.action_objects %}
+                        <a href="{% url 'device-create' %}" class="action-button click-animation">
+                            <img src="{% static 'ico/main/' %}{{ action.ico }}.svg" alt="X">
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
     <!-- Search panel -->
     {% if filter %}
         <form method="GET">
@@ -37,11 +62,100 @@
     {% if no_search_result %}
         <img src="{% static 'ico/main/hidden.svg' %}" alt="No output">
     {% else %}
-        {% for object in object_list %}
-            <div class="grid-box grid-padding">
-                <p>{{ object.pk }} - {{ object.name }} - {{ object.hostname }}</p>
+
+        {% if display_version == 1 %}
+            <!-- Grid container for models -->
+            <div id="content-grid">
+                
+                {% for object in object_list %}
+                    <!-- Single model item -->
+                    <div class="model-item">
+                        <div class="grid-padding">
+                            <div class="model-item-status">
+                                <!-- Box activity -->
+                                <div class="ball-box">
+                                    {% if object.active is True or object.active is False %}
+                                        <!-- Active status -->
+                                        {% if object.active is True %}
+                                            <div class="ball ball-active" aria-label="Active"></div>
+                                        {% else %}
+                                            <div class="ball ball-inactive" aria-label="Active"></div>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if object.ssh_status is True or object.ssh_status is False %}
+                                        <!-- SSH status -->
+                                        {% if object.ssh_status is True %}
+                                            <div class="ball ball-active" aria-label="SSH status"></div>
+                                        {% else %}
+                                            <div class="ball ball-inactive" aria-label="SSH status"></div>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if object.https_status is True or object.https_status is False %}
+                                        <!-- HTTPS status -->
+                                        {% if object.https_status is True %}
+                                            <div class="ball ball-active" aria-label="HTTPS status"></div>
+                                        {% else %}
+                                            <div class="ball ball-inactive" aria-label="HTTPS status"></div>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                                <div>
+                                    <input class="check-item collapse" type="checkbox">
+                                </div>
+                            </div>
+
+                            <!-- Single model item header -->
+                            <div class="model-item-header">
+                                {% if object.ico or object.ico == 0 %}
+                                    <img class="box-header-svg" src="/{{ object.get_ico_display }}" alt="switch">
+                                {% endif %}
+                                <div>
+                                    <h3><a href="#">{{ object.name }}</a></h3>
+                                    <q>{% translate "Created" %}: {{ object.created }}</q></br>
+                                    <q>{% translate "Updated" %}: {{ object.updated }}</q>
+                                </div>
+                            </div>
+
+                            <!-- Single model item body -->
+                            <div class="model-item-body">
+                                <table>
+                                    {% for row in display %}
+                                        <tr>
+                                            <th>Test</th>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
             </div>
-        {% endfor %}
+        {% elif display_version == 2 %}
+            <!-- Table -->
+            <div class="table grid-box">
+
+                <table class="shadow table-hover table-blue">
+                    <thead>
+                        <tr>
+                            <th scope="col">{% translate "Name" %}</th>
+                            <th scope="col">{% translate "Created" %}</th>
+                            <th scope="col">{% translate "Updated" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for object in object_list %}
+                            <tr>
+                                <th><a href="#">{{ object.name }}</a></th>
+                                <td>{{ object.created }}</td>
+                                <td>{{ object.updated }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        {% endif %}
     {% endif %}
 
     <!-- Pagination panel -->
