@@ -247,8 +247,8 @@
         }
 
         .model-item-header img {
-            width: 50px;
-            height: 50px;
+            width: 70px;
+            height: 70px;
         }
 
         .model-item-body {
@@ -260,10 +260,8 @@
             margin-top: var(--box_padding_full);
         }
 
-        .model-item-body-row {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
+        .model-item-body th {
+            padding: var(--box_padding_half);
         }
 
 

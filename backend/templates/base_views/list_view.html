@@ -105,12 +105,14 @@
                             <!-- Single model item body -->
                             <div class="model-item-body">
                                 {% if list_view %}
-                                    {% for row in list_view %}
-                                        <div class="model-item-body-row">
-                                            <h4>{% verbose_name object row %}:</h4>
-                                            <p>{% object_attribute_value object row %}</p>
-                                        </div>
-                                    {% endfor %}
+                                    <table>
+                                        {% for row in list_view %}
+                                            <tr>
+                                                <th>{% verbose_name object row %}:</th>
+                                                <td>{% object_attribute_value object row %}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </table>
                                 {% endif %}
                             </div>
                         </div>
