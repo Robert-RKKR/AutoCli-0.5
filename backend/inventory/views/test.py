@@ -18,6 +18,16 @@ class DeviceListView(ListView):
     filterset = DeviceFilter
     plural_panel = True
     list_box_view = True
+    list_view = ['hostname', 'device_type', 'ssh_port', 'https_port', 'credential', 'certificate']
+
+
+class ColorListView(ListView):
+
+    model = Color
+    filterset = ColorFilter
+    plural_panel = True
+    list_box_view = True
+    list_view = ['hexadecimal']
 
 
 class DeviceDetailView(DetailView):

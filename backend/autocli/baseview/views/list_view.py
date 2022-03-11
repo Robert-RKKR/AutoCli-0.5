@@ -13,6 +13,7 @@ class ListView(BaseView, DjangoView):
 
     # Blank value attributes:
     filterset = None
+    list_view = None
 
     # Pre-populated attributes:
     template_name = 'base_views/list_view.html'
@@ -49,6 +50,8 @@ class ListView(BaseView, DjangoView):
         context['current_url_no_display'] = self._no_display_url(url)
         # Submit display_version value to HTML template:
         context['display_version'] = self._chaeck_display_version(url)
+        # Submit list_view value to HTML template:
+        context['list_view'] = self.list_view
 
         # Return context data:
         return context

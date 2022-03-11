@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load i18n %}
+{% load auto_tags %}
 
 {% block content %}
 
@@ -39,7 +40,13 @@
     {% endif %}
 
     {% if no_search_result %}
-        <img src="{% static 'ico/main/hidden.svg' %}" alt="No output">
+        <div class="no-object-to-display">
+            <div>
+                <img src="{% static 'ico/main/hidden.svg' %}" alt="No output">
+                </br></br>
+                <p>{% translate "There is nothing to display :(" %}</p>
+            </div>
+        </div>
     {% else %}
 
         {% if display_version == 1 %}
@@ -89,21 +96,22 @@
                                     <img class="box-header-svg" src="/{{ object.get_ico_display }}" alt="switch">
                                 {% endif %}
                                 <div>
-                                    <h3><a href="#">{{ object.name }}</a></h3>
-                                    <q>{% translate "Created" %}: {{ object.created }}</q></br>
-                                    <q>{% translate "Updated" %}: {{ object.updated }}</q>
+                                    <h3><a href="{% url 'device-detail' pk=object.pk %}">{{ object.name|title }}</a></h3>
+                                    <q>{% verbose_name object 'created' %}: {{ object.created }}</q></br>
+                                    <q>{% verbose_name object 'updated' %}: {{ object.updated }}</q></br>
                                 </div>
                             </div>
 
                             <!-- Single model item body -->
                             <div class="model-item-body">
-                                <table>
-                                    {% for row in display %}
-                                        <tr>
-                                            <th>Test</th>
-                                        </tr>
+                                {% if list_view %}
+                                    {% for row in list_view %}
+                                        <div class="model-item-body-row">
+                                            <h4>{% verbose_name object row %}:</h4>
+                                            <p>{% object_attribute_value object row %}</p>
+                                        </div>
                                     {% endfor %}
-                                </table>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -118,16 +126,22 @@
                     <thead>
                         <tr>
                             <th scope="col">{% translate "Name" %}</th>
-                            <th scope="col">{% translate "Created" %}</th>
-                            <th scope="col">{% translate "Updated" %}</th>
-                        </tr>
+                            {% if list_view %}
+                                {% for row in list_view %}
+                                    <th>{{ row }}</th>
+                                {% endfor %}
+                            {% endif %}
+                    </tr>
                     </thead>
                     <tbody>
                         {% for object in object_list %}
                             <tr>
-                                <th><a href="#">{{ object.name }}</a></th>
-                                <td>{{ object.created }}</td>
-                                <td>{{ object.updated }}</td>
+                                <th><a href="{% url 'device-detail' pk=object.pk %}">{{ object.name }}</a></th>
+                                {% if list_view %}
+                                    {% for row in list_view %}
+                                        <td>{% object_attribute_value object row %}</td>
+                                    {% endfor %}
+                                {% endif %}
                             </tr>
                         {% endfor %}
                     </tbody>

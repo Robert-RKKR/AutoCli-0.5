@@ -3,7 +3,11 @@ var closeActiveElement = document.getElementById("page-left");
 var closeToggleButton = document.getElementById("sidebar-close");
 
 closeToggleButton.onclick = function () {
-    closeActiveElement.classList.toggle("display-flex");
+    if(closeActiveElement.classList.contains("collapse") === false) {
+        closeActiveElement.classList.toggle("collapse");
+    } else {
+        closeActiveElement.classList.remove("collapse");
+    }
 };
 
 // Sidebar (Page left) menu close / open action with cookies:
@@ -35,14 +39,14 @@ for(let i=0; i<toggleButtons.length; i++) {
         
         if(activeElement.classList.contains("collapse") === false) {
             activeElement.classList.add("collapse");
-            document.cookie = 'open_menu_action=false;path=/';
+            document.cookie = "open_menu_action=false;path=/";
         } else {
             for(let i=0; i<toggleButtons.length; i++) {
                 let activeElementInside = toggleButtons[i].nextElementSibling
                 activeElementInside.classList.add("collapse");
             }
             activeElement.classList.remove("collapse");
-            document.cookie = 'open_menu_action=' + i + ';path=/';
+            document.cookie = "open_menu_action=" + i + ";path=/";
         }  
 
     });
