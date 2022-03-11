@@ -4,6 +4,10 @@
 
 {% block content %}
 
+    {% block panel %}
+        {% include "base_views/components/panel.html" %}
+    {% endblock panel %}
+
     <p>{{ object.pk }} - {{ object.name }} - {{ object.hostname }}</p>
 
 {% endblock %}

@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from django.db import models
 
 # Base Model Import:
-from autocli.basemodel.basemodel import BaseMainModel
+from autocli.basemodel.basemodel import BaseModel
 
 # Other models Import:
 from .credential_model import Credential
@@ -14,7 +14,7 @@ from ..constants import ICONS
 
 
 # Folder model:
-class Folder(BaseMainModel):
+class Folder(BaseModel):
     """ Folders allow you to group network devices. """
 
     class Meta:

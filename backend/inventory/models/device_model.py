@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from django.db import models
 
 # Base Model Import:
-from autocli.basemodel.basemodel import BaseMainModel
+from autocli.basemodel.basemodel import BaseModel
 
 # Other models Import:
 from .credential_model import Credential
@@ -18,7 +18,7 @@ from ..constants import ICONS
 
 
 # Device model:
-class Device(BaseMainModel):
+class Device(BaseModel):
     """ 
         Devices is the main component of the AutoCli application,
         it contains basic network Information about devices that

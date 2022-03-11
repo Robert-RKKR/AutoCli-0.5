@@ -5,7 +5,7 @@ from django.contrib import admin
 # Models Imports:
 from .models.credential_model import Credential
 from .models.device_model import Device
-from .models.folde_model import Folder
+from .models.folder_model import Folder
 from .models.color_model import Color
 
 # Admin classes:

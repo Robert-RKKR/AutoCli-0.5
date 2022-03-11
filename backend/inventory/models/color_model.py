@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from django.db import models
 
 # Base Model Import:
-from autocli.basemodel.basemodel import BaseMainModel
+from autocli.basemodel.basemodel import BaseModel
 
 # Validators Import:
 from ..validators import ColorValueValidator
@@ -11,11 +11,11 @@ from ..validators import ColorValueValidator
 # Other models Import:
 from .credential_model import Credential
 from .device_model import Device
-from .folde_model import Folder
+from .folder_model import Folder
 
 
 # Color model:
-class Color(BaseMainModel):
+class Color(BaseModel):
     """ 
         The Color model is working like Tag,
         its available to be added to all device,

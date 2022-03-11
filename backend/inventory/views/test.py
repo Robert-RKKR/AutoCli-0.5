@@ -1,6 +1,8 @@
 # Application Import:
 from inventory.models.device_model import Device
+from inventory.models.color_model import Color
 from inventory.filters.device_filter import DeviceFilter
+from inventory.filters.color_filter import ColorFilter
 from inventory.forms.device_form import DeviceForm
 
 # Own views models:

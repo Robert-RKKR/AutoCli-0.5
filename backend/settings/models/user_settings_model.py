@@ -6,10 +6,10 @@ from django.contrib.auth.models import User
 from django.db import models
 
 # Base Model Import:
-from autocli.basemodel.basemodel import BaseMainModel
+from autocli.basemodel.basemodel import BaseModel
 
 
-class UseSettings(BaseMainModel):
+class UseSettings(BaseModel):
 
     class Meta:
         

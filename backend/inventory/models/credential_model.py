@@ -3,11 +3,11 @@ from django.utils.translation import gettext_lazy as _
 from django.db import models
 
 # Base Model Import:
-from autocli.basemodel.basemodel import BaseMainModel
+from autocli.basemodel.basemodel import BaseModel
 
 
 # Credential model:
-class Credential(BaseMainModel):
+class Credential(BaseModel):
     """ 
         The Credential specifies the login information (Login, password)
         needed in the login process when connecting to network devices.

@@ -34,7 +34,6 @@ class CreateView(BaseView, DjangoView):
         # Add panel data to HTML template:
         context['panel'] = self._collect_panel_data()
         # Change successful URL:
-        print('----->', self.request.META.get('url'))
         self.success_url = self.request.get_raw_uri()
         # Return HTML response:
         return super().post(request, *args, **kwargs)

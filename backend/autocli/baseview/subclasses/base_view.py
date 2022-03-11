@@ -12,44 +12,40 @@ class BaseView(View):
     plural_panel = None
     list_box_view = None
 
-    def get_context_data(self, **kwargs):
-        """ Overwrite get_context_data function. """
-
-        # Inherit functionality from get_context_data function:
-        context = super().get_context_data(**kwargs)
-        # Submit current URL request to HTML template:
-        url = self.request.build_absolute_uri()
-        context['current_url'] = url
-        # Submit carrent URL with out display request to HTML template:
-        context['current_url_no_display'] = self._no_display_url(url)
-        # Submit display_version value to HTML template:
-        context['display_version'] = self._chaeck_display_version(url)
-
-        # Return context data:
-        return context
-
     def _chaeck_display_version(self, url):
         """ Check display version based on provided URL or default value. """
 
-        # Declare return value:
-        return_value = None
+        ### Collect display version from URL:
+        version = None
+        # Collect current display value from session:
+        session_version = self.request.session.get('display_version', None)
         # Search URL to find all query values:
         query_values = re.findall(r'(\w*=\w{1,})', url)
         # Collect display value from all query values:
         for row in query_values:
             if 'display' in row:
                 try:
-                    return_value = int(row.split('=')[1])
+                    version = int(row.split('=')[1])
                 except:
-                    return_value = None
+                    version = 1
 
-        # Use default value if value was not provided by URL
-        # or value is nat valid:
-        if return_value is None:
-            return_value = 1
+        # If display value collected from session is None,
+        # use provided in URL or default if not provided:
+        if session_version is None:
+            if version is None:
+                version = 1
+            self.request.session['display_version'] = version
+        # If display value is provided by session,
+        # check if value is tha same like value provided by URL.
+        # Value provided by URL overides value collected from session:
+        else:
+            if version is None:
+                version = session_version
+            elif session_version != version:
+                self.request.session['display_version'] = version
 
-        # Return display query value:
-        return return_value
+        # Return default value:
+        return version
 
     def _no_display_url(self, url):
         """ Return URL with out display query. """
