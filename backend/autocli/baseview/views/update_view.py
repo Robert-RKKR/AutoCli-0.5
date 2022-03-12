@@ -46,7 +46,7 @@ class UpdateView(BaseView, DjangoView):
         # Option one save and edit:
         elif request.POST.get('save_two') is not None:
             self.success_url = url
-        # Option one save and return to list view:self._collect_class_name() + ':list'
+        # Option one save and return to list view:
         elif request.POST.get('save_three') is not None:
             self.success_url = redirect('device:list').url
 

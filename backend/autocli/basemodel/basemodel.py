@@ -118,7 +118,7 @@ class BaseModel(models.Model):
 
     # Model representation:
     def __str__(self) -> str:
-        return f'{self.pk} created {self.name}'
+        return self.name
 
     # Override default Delete method:
     def delete(self):

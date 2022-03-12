@@ -265,7 +265,7 @@
         }
 
 
-            /*   -----   ITEM BALL   -----   */
+            /*   -----   ITEM BALL AND BUTTON   -----   */
             .ball-box {
                 display: flex;
                 flex-direction: row;
@@ -286,6 +286,15 @@
         
             .ball-inactive {
                 background: var(--color_strong_red);
+            }
+
+            .box-buttons {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .box-buttons a {
+                margin-left: var(--size_medium);
             }
 
     

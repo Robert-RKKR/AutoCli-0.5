@@ -85,8 +85,9 @@
                                         {% endif %}
                                     {% endif %}
                                 </div>
-                                <div>
-                                    <input class="check-item collapse" type="checkbox">
+                                <div class="box-buttons collapse">
+                                    <a class="button green-button click-animation" href="{% url update_link pk=object.pk %}">{% translate "Update" %}</a>
+                                    <a class="button red-button click-animation" href="{% url delete_link pk=object.pk %}">{% translate "Delete" %}</a>
                                 </div>
                             </div>
 
@@ -146,8 +147,8 @@
                                     {% endfor %}
                                 {% endif %}
                                 <th class="table-buttons-box collapse">
-                                    <a class="button blue-button click-animation" href="#">{% translate "Update" %}</a>
-                                    <a class="button blue-button click-animation" href="#">{% translate "Delete" %}</a>
+                                    <a class="button green-button click-animation" href="{% url update_link pk=object.pk %}">{% translate "Update" %}</a>
+                                    <a class="button red-button click-animation" href="{% url delete_link pk=object.pk %}">{% translate "Delete" %}</a>
                                 </th>
                             </tr>
                         {% endfor %}
@@ -204,8 +205,5 @@
             </div>
         </div>
     {% endif %}
-
-    </br></br></br>
-    <a class="button blue-button click-animation" href="#">{% translate "Update" %}</a>
 
 {% endblock %}

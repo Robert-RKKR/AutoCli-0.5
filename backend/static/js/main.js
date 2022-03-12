@@ -14,7 +14,7 @@ closeToggleButton.onclick = function () {
 
 // Sidebar (Page left) menu close / open action with cookies:
 var toggleButtons = document.getElementsByClassName("collapse-menu-link");
-let cookies = document.cookie.split(";");
+var cookies = document.cookie.split(";");
 
 for(let i=0; i<cookies.length; i++) {
     let cookie = cookies[i].split("=");

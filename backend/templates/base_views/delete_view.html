@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="grid-box grid-padding">
+        <form method="post">
+            {% csrf_token %}
+            <p>{% translate "Are you sure you want to delete" %} <strong>{{ object }}</strong> {{ class_name|title }}?</p>
+            {{ form }}
+            <input class="button red-button click-animation" type="submit" name="save_three" value='{% translate "Delete" %}'>
+        </form>
+    </div>
+
+{% endblock %}
