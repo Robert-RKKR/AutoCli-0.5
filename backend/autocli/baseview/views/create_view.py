@@ -1,6 +1,9 @@
 # Base view Import:
 from ..subclasses.base_view import BaseView
 
+# Django Import:
+from django.shortcuts import redirect
+
 # Django view Import:
 from django.views.generic.edit import CreateView as DjangoView
 
@@ -37,16 +40,15 @@ class CreateView(BaseView, DjangoView):
         ### Create return URL ###
         # Collect current URL:
         url = self.request.build_absolute_uri()
-        print(url)
         # Option one save and create new one:
         if request.POST.get('save_one') is not None:
             self.success_url = url
         # Option one save and edit:
         elif request.POST.get('save_two') is not None:
             self.success_url = url
-        # Option one save and return to list view:
+        # Option one save and return to list view:self._collect_class_name() + ':list'
         elif request.POST.get('save_three') is not None:
-            pass
+            self.success_url = redirect('device:list').url
 
         # Return HTML response:
         return super().post(request, *args, **kwargs)

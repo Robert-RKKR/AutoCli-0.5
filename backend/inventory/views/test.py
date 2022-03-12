@@ -30,9 +30,20 @@ class ColorListView(ListView):
     list_view = ['hexadecimal']
 
 
+class DeviceUpdateView(UpdateView):
+
+    model = Color
+
+
+class DeviceDeleteView(DeleteView):
+
+    model = Color
+
+
 class DeviceDetailView(DetailView):
 
     model = Device
+    form_class = DeviceForm
 
 
 class TestCreateView(CreateView):

@@ -139,7 +139,7 @@
                     <tbody>
                         {% for object in object_list %}
                             <tr>
-                                <th><a href="{% url 'device:detail' pk=object.pk %}">{{ object.name }}</a></th>
+                                <th><a href="{% url detail_link pk=object.pk %}">{{ object.name }}</a></th>
                                 {% if list_view %}
                                     {% for row in list_view %}
                                         <td>{% object_attribute_value object row %}</td>

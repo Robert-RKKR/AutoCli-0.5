@@ -26,7 +26,7 @@ class BaseView(View):
         # Submit display_version value to HTML template:
         context['display_version'] = self._chaeck_display_version(url)
         # Submit class name to HTML template:
-        class_name = self.model._meta.object_name.lower()
+        class_name = self._collect_class_name()
         context['class_name'] = class_name
         # Submit links to HTML template:
         context['detail_link'] = class_name + ':detail'
@@ -36,6 +36,9 @@ class BaseView(View):
 
         # Return context data:
         return context
+
+    def _collect_class_name(self):
+        return self.model._meta.object_name.lower()
 
     def _chaeck_display_version(self, url):
         """ Check display version based on provided URL or default value. """
@@ -91,7 +94,7 @@ class BaseView(View):
             'list_box_view': False
         }
         # 
-        model_name = self.model._meta.object_name.lower() + '-create'
+        model_name = self._collect_class_name() + '-create'
 
         if self.plural_panel is True:
             data = {
