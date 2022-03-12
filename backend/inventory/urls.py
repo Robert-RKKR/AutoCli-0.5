@@ -5,10 +5,10 @@ from django.urls import path
 # Application Import:
 from .views.test import DeviceListView, TestCreateView, DeviceDetailView, ColorListView
 
-urlpatterns = [
-    path('device-list/', DeviceListView.as_view(), name='device-list'),
-    path('device-detail/<str:pk>', DeviceDetailView.as_view(), name='device-detail'),
-    path('device-create/', TestCreateView.as_view(), name='device-create'),
+app_name = 'device'
 
-    path('color-list/', ColorListView.as_view(), name='color-list'),
+urlpatterns = [
+    path('device-list/', DeviceListView.as_view(), name='list'),
+    path('device-detail/<str:pk>', DeviceDetailView.as_view(), name='detail'),
+    path('device-create/', TestCreateView.as_view(), name='create'),
 ]

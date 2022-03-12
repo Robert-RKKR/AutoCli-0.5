@@ -33,7 +33,20 @@ class CreateView(BaseView, DjangoView):
         context = self.get_context_data()
         # Add panel data to HTML template:
         context['panel'] = self._collect_panel_data()
-        # Change successful URL:
-        self.success_url = self.request.get_raw_uri()
+
+        ### Create return URL ###
+        # Collect current URL:
+        url = self.request.build_absolute_uri()
+        print(url)
+        # Option one save and create new one:
+        if request.POST.get('save_one') is not None:
+            self.success_url = url
+        # Option one save and edit:
+        elif request.POST.get('save_two') is not None:
+            self.success_url = url
+        # Option one save and return to list view:
+        elif request.POST.get('save_three') is not None:
+            pass
+
         # Return HTML response:
         return super().post(request, *args, **kwargs)

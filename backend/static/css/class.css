@@ -33,9 +33,15 @@
     --page_distance_top: 8vh;
     --page_distance_bottom: 92vh;
     --page_left: 250px;
-    --box_padding_full: 10px;
-    --box_padding_half: 5px;
-    --box_padding_full_and_half: 20px;
+    --size_small: 5px;
+    --size_medium: 10px;
+    --size_big: 20px;
+    --size_super_big: 30px;
+
+    /* Font size */
+    --font_small: 1em;
+    --font_medium: 1.2em;
+    --font_big: 1.3em;
 }
 
 .display-flex {
@@ -51,13 +57,13 @@
 .grid-box {
     display: flex;
     flex-direction: row;
-    margin-bottom: var(--box_padding_full);
+    margin-bottom: var(--size_medium);
     background: var(--color_box_background);
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
 }
 
 .grid-padding {
-    padding: var(--box_padding_full);
+    padding: var(--size_medium);
 }
 
 .grid-panel {
@@ -70,38 +76,21 @@
     background: red;
 }
 
-
-/*   -----   ACTION BUTTON   -----   */
-.action-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--box_padding_full);
-    cursor: pointer;
-    height: 30px;
-    width: 30px;
-}
-
-.action-button:hover {
-    background: var(--color_strong_red);
-}
-
-
 /*   -----   PADDING / MARGIN   -----   */
 .left-padding {
-    padding-left: var(--box_padding_half);
+    padding-left: var(--size_small);
 }
 
 .right-padding {
-    padding-right: var(--box_padding_half);
+    padding-right: var(--size_small);
 }
 
 .left-margin {
-    margin-left: var(--box_padding_half);
+    margin-left: var(--size_small);
 }
 
 .right-margin {
-    margin-right: var(--box_padding_half);
+    margin-right: var(--size_small);
 }
 
 /*   -----   LABEL   -----   */
@@ -132,6 +121,38 @@
 
 
 /*   -----   BUTTON   -----   */
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--size_medium);
+    border: none;
+    font-size: var(--font_small);
+    color: var(--color_font_gray_dark);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: var(--color_strong_gray);
+    color: var(--color_page_background)
+}
+
+.blue-button {
+    background: var(--color_strong_blue);
+}
+
+.green-button {
+    background: var(--color_strong_green);
+}
+
+.red-button {
+    background: var(--color_strong_red);
+}
+
+.yellow-button {
+    background: var(--color_strong_yellow);
+}
 
 
     /*   -----   CLICK ANIMATION   -----   */
@@ -143,3 +164,20 @@
     .click-animation:active {
         transform: scale(0.9);
     }
+
+
+    /*   -----   ACTION BUTTON   -----   */
+    .action-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--size_medium);
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+    }
+    
+    .action-button:hover {
+        background: var(--color_strong_red);
+    }
+    

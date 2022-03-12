@@ -96,7 +96,7 @@
                                     <img class="box-header-svg" src="/{{ object.get_ico_display }}" alt="switch">
                                 {% endif %}
                                 <div>
-                                    <h3><a href="{% url 'device-detail' pk=object.pk %}">{{ object.name|title }}</a></h3>
+                                    <h3><a href="{% url detail_link pk=object.pk %}">{{ object.name|title }}</a></h3>
                                     <q>{% verbose_name object 'created' %}: {{ object.created }}</q></br>
                                     <q>{% verbose_name object 'updated' %}: {{ object.updated }}</q></br>
                                 </div>
@@ -130,20 +130,25 @@
                             <th scope="col">{% translate "Name" %}</th>
                             {% if list_view %}
                                 {% for row in list_view %}
-                                    <th>{{ row }}</th>
+                                    <th>{{ row|title }}</th>
                                 {% endfor %}
                             {% endif %}
+                            <th id="table-buttons-action" class="collapse">{% translate "Actions" %}</th>
                     </tr>
                     </thead>
                     <tbody>
                         {% for object in object_list %}
                             <tr>
-                                <th><a href="{% url 'device-detail' pk=object.pk %}">{{ object.name }}</a></th>
+                                <th><a href="{% url 'device:detail' pk=object.pk %}">{{ object.name }}</a></th>
                                 {% if list_view %}
                                     {% for row in list_view %}
                                         <td>{% object_attribute_value object row %}</td>
                                     {% endfor %}
                                 {% endif %}
+                                <th class="table-buttons-box collapse">
+                                    <a class="button blue-button click-animation" href="#">{% translate "Update" %}</a>
+                                    <a class="button blue-button click-animation" href="#">{% translate "Delete" %}</a>
+                                </th>
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -199,5 +204,8 @@
             </div>
         </div>
     {% endif %}
+
+    </br></br></br>
+    <a class="button blue-button click-animation" href="#">{% translate "Update" %}</a>
 
 {% endblock %}

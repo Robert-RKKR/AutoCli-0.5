@@ -77,8 +77,8 @@ body {
 #page-left svg, img {
     fill: var(--color_font_white);
     cursor: pointer;
-    width: 22px;
-    height: 22px;
+    width: var(--size_big);
+    height: var(--size_big);
 }
 
 #page-left a {
@@ -100,7 +100,7 @@ body {
         height: 80%;
         width: 20%;
         max-width: 50px;
-        margin: 0px 10px 0px 10px;
+        margin: 0px var(--size_medium) 0px var(--size_medium);
     }
 
 
@@ -109,7 +109,7 @@ body {
         display: flex;
         flex-direction: row;
         align-items: center;
-        font-size: 1em;
+        font-size: var(--font_small);
     }
 
     .menu-link:hover, .submenu-link:hover {
@@ -178,7 +178,7 @@ body {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: 0px 30px;
+        padding: 0px var(--size_super_big);
     }
 
     #sidebar-close {
@@ -196,7 +196,7 @@ body {
     #page-name > h2 {
         color: var(--color_font_gray_dark);
         text-transform: uppercase;
-        font-size: 1.2em;
+        font-size: var(--font_medium);
     }
 
     #user-menu img {
@@ -216,13 +216,13 @@ body {
     #page-bottom {
         box-sizing: border-box;
         background: var(--color_page_background);
-        padding: var(--box_padding_full_and_half) var(--box_padding_full);
+        padding: var(--size_big) var(--size_medium);
     }
 
 
     /*   -----   PAGE CONTENT   -----   */
     #page-content > div {
-        margin-bottom: var(--box_padding_full);
+        margin-bottom: var(--size_medium);
     }
 
     /*   -----   PAGE FOOTER   -----   */
@@ -231,6 +231,6 @@ body {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        padding: var(--box_padding_full_and_half);
+        padding: var(--size_big);
         margin-bottom: 0px;
     }

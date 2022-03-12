@@ -12,6 +12,31 @@ class BaseView(View):
     plural_panel = None
     list_box_view = None
 
+    def get_context_data(self, **kwargs):
+        """ Overwrite get_context_data function. """
+
+        # Inherit functionality from get_context_data function:
+        context = super().get_context_data(**kwargs)
+
+        # Submit current URL request to HTML template:
+        url = self.request.build_absolute_uri()
+        context['current_url'] = url
+        # Submit carrent URL with out display request to HTML template:
+        context['current_url_no_display'] = self._no_display_url(url)
+        # Submit display_version value to HTML template:
+        context['display_version'] = self._chaeck_display_version(url)
+        # Submit class name to HTML template:
+        class_name = self.model._meta.object_name.lower()
+        context['class_name'] = class_name
+        # Submit links to HTML template:
+        context['detail_link'] = class_name + ':detail'
+        context['create_link'] = class_name + ':create'
+        context['delete_link'] = class_name + ':delete'
+        context['update_link'] = class_name + ':update'
+
+        # Return context data:
+        return context
+
     def _chaeck_display_version(self, url):
         """ Check display version based on provided URL or default value. """
 

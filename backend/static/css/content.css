@@ -35,8 +35,8 @@
 
     .message-close {
         cursor: pointer;
-        width: 25px;
-        height: 25px;
+        width: var(--size_super_big);
+        height: var(--size_super_big);
     }
         
 
@@ -82,12 +82,12 @@
 
     /*   -----   PANEL BAR   -----   */
     #content-panel img {
-        height: 30px;
-        width: 30px;
+        height: var(--size_super_big);
+        width: var(--size_super_big);
     }
 
     #content-panel a {
-        padding: var(--box_padding_full)
+        padding: var(--size_medium)
     }
 
     #content-panel > div {
@@ -104,17 +104,17 @@
 
     /*   -----   SEARCH BAR   -----   */
     #content-search input {
-        padding: var(--box_padding_half) 20px;
+        padding: var(--size_small) var(--size_super_big);
         color: var(--color_font_gray);
-        font-size: 1.1em;
+        font-size: var(--font_small);
         border: none;
         width: 100%;
     }
 
     #content-search button {
-        padding: var(--box_padding_full);
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: var(--size_medium);
+        padding-left: var(--size_big);
+        padding-right: var(--size_big);
         border: none;
         background: var(--color_gray_background);
     }
@@ -124,9 +124,9 @@
     }
 
     #content-search div {
-        padding: var(--box_padding_full);
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: var(--size_medium);
+        padding-left: var(--size_big);
+        padding-right: var(--size_big);
         border: none;
         background: var(--color_gray_background);
     }
@@ -143,13 +143,13 @@
 
     #content-filter input {
         background: var(--color_gray_background);
-        padding: var(--box_padding_half);
+        padding: var(--size_small);
         border: none;
     }
     
     #content-filter select {
         background: var(--color_gray_background);
-        padding: var(--box_padding_half);
+        padding: var(--size_small);
         color: var(--color_font_gray);
         border: none;
     }
@@ -160,7 +160,7 @@
     }
 
     #content-filter > div > label {
-        margin-right: var(--box_padding_full);
+        margin-right: var(--size_medium);
     }
 
 
@@ -205,7 +205,7 @@
 }
 
 .no-object-to-display p {
-    font-size: 1.2em;
+    font-size: var(--font_medium);
 }
 
 
@@ -214,7 +214,7 @@
     #content-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: var(--box_padding_full);
+        grid-gap: var(--size_medium);
     }
 
     
@@ -243,7 +243,7 @@
 
         .model-item-header h3 > a {
             color: var(--color_page_left_one);
-            font-size: 1.3em;
+            font-size: var(--font_big);
         }
 
         .model-item-header img {
@@ -256,12 +256,12 @@
             flex-direction: column;
             justify-content: space-around;
             border-top: var(--color_light_gray) solid 1px;
-            padding-top: var(--box_padding_full);
-            margin-top: var(--box_padding_full);
+            padding-top: var(--size_medium);
+            margin-top: var(--size_medium);
         }
 
         .model-item-body th {
-            padding: var(--box_padding_half);
+            padding: var(--size_small);
         }
 
 
@@ -275,8 +275,8 @@
 
             .ball {
                 border-radius: 50%;
-                width: var(--box_padding_full);
-                height: var(--box_padding_full);
+                width: var(--size_medium);
+                height: var(--size_medium);
                 margin: 0px 10px 15px 0px;
             }
         
@@ -292,8 +292,9 @@
      /*   ---------------------------   */
     /*   ----    MODEL TABLE    ----   */
     .table {
-        margin: 0px var(--model_padding) 20px var(--model_padding);
+        margin: 0px var(--model_padding) var(--size_big) var(--model_padding);
         box-sizing: border-box;
+        position: relative;
 	}
 
     .table table {
@@ -310,12 +311,21 @@
 
     .table table th {
         font-weight: bold;
+        font-size: var(--font_small);
     }
 
     .table table th a {
         text-decoration: none;
         color: var(--color_font_gray_dark);
     }
+
+
+        /*   ----     TABLE BUTTONS     ----   */
+
+        .table-buttons-box a:first-child {
+            margin-bottom: var(--size_small);
+        }
+
 
         /*   ----     TABLE BLUE     ----   */
         .table-blue thead {
@@ -369,6 +379,27 @@
 
 
     /*   -----   CREATE VIEW   -----   */
-    .create-view {
-        
+    .create-view-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .create-view-form input {
+        background: var(--color_gray_background);
+        padding: var(--size_small);
+        border: none;
+    }
+
+    .create-view-form-item:nth-last-child(n+2) {
+        margin-bottom: var(--size_medium);
+    }
+
+    .create-view-buttons {
+        display: flex;
+        flex-direction: row;
+        margin-top: var(--size_medium);
+    }
+
+    .create-view-buttons input {
+        margin-right: var(--size_medium);
     }

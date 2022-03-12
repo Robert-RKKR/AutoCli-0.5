@@ -3,11 +3,13 @@ var closeActiveElement = document.getElementById("page-left");
 var closeToggleButton = document.getElementById("sidebar-close");
 
 closeToggleButton.onclick = function () {
+    
     if(closeActiveElement.classList.contains("collapse") === false) {
         closeActiveElement.classList.toggle("collapse");
     } else {
         closeActiveElement.classList.remove("collapse");
     }
+
 };
 
 // Sidebar (Page left) menu close / open action with cookies:
@@ -50,17 +52,5 @@ for(let i=0; i<toggleButtons.length; i++) {
         }  
 
     });
+
 }
-
-// Filter close action:
-var activeElement = document.getElementById("content-filter");
-var toggleButton = document.getElementById("content-filter-button");
-
-toggleButton.onclick = function () {
-
-    if(activeElement.classList.contains("collapse") === false) {
-        activeElement.classList.add("collapse");
-    } else {
-        activeElement.classList.remove("collapse");
-    }
-};

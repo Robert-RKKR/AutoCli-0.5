@@ -43,15 +43,12 @@ class ListView(BaseView, DjangoView):
         context['no_search_result'] = self.no_search_result
         # Submit filter class to HTML template:
         context['filter'] = self.filter_results
-        # Submit current URL request to HTML template:
-        url = self.request.build_absolute_uri()
-        context['current_url'] = url
-        # Submit carrent URL with out display request to HTML template:
-        context['current_url_no_display'] = self._no_display_url(url)
-        # Submit display_version value to HTML template:
-        context['display_version'] = self._chaeck_display_version(url)
         # Submit list_view value to HTML template:
         context['list_view'] = self.list_view
+        # Submit list view js to HTML template:
+        context['view_js'] = 'js/list_view.js'
+        # Submit edit to HTML template:
+        context['edit'] = 1
 
         # Return context data:
         return context

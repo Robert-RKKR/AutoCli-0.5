@@ -50,18 +50,18 @@ class Color(BaseModel):
     devices = models.ManyToManyField(
         Device,
         verbose_name=_('Devices'),
-        help_text=_('All devices that belonge to current color.'),
+        help_text=_('All devices that belongs to current color.'),
         blank=True
     )
     folders = models.ManyToManyField(
         Folder,
         verbose_name=_('Folders'),
-        help_text=_('All folder that belonge to current color.'),
+        help_text=_('All folder that belongs to current color.'),
         blank=True
     )
     credentials = models.ManyToManyField(
         Credential,
         verbose_name=_('Credentials'),
-        help_text=_('All credentials that belonge to current color.'),
+        help_text=_('All credentials that belongs to current color.'),
         blank=True
     )

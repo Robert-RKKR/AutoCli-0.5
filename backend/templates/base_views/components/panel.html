@@ -16,9 +16,14 @@
                     </a>
                 {% endif %}
             </div>
+            {% if edit %}
+                <div class="action-group">
+                    <img id="edit-button" class="action-button click-animation" src="{% static 'ico/main/edit.svg' %}" alt="Ico">
+                </div>
+            {% endif %}
             <div class="action-group">
                 {% for action in panel.action_objects %}
-                    <a href="{% url 'device-create' %}" class="action-button click-animation">
+                    <a href="{% url create_link %}" class="action-button click-animation">
                         <img src="{% static 'ico/main/' %}{{ action.ico }}.svg" alt="X">
                     </a>
                 {% endfor %}
