@@ -1,3 +1,6 @@
+# Django language import:
+from django.utils.translation import gettext_lazy as _
+
 # Base view Import:
 from ..subclasses.base_view import BaseView
 
@@ -13,8 +16,9 @@ class CreateView(BaseView, DjangoView):
 
     # Pre-populated attributes:
     template_name = 'base_views/create_view.html'
-    plural_panel = True
+    plural = True
     success_url = '/'
+    page_name_action = _('Create a new')
 
     def post(self, request, *args, **kwargs):
         """ Overwrite post function. """

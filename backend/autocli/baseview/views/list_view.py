@@ -1,3 +1,6 @@
+# Django language import:
+from django.utils.translation import gettext_lazy as _
+
 # Python Import:
 import re
 
@@ -17,6 +20,8 @@ class ListView(BaseView, DjangoView):
 
     # Pre-populated attributes:
     template_name = 'base_views/list_view.html'
+    page_name_action = _('List all')
+    plural = True
     paginate_by = 9
 
     def get_queryset(self):

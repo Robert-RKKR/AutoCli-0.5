@@ -13,7 +13,7 @@
             {% csrf_token %}
             <p>{% translate "Are you sure you want to delete" %} <strong>{{ object }}</strong> {{ class_name|title }}?</p>
             {{ form }}
-            <input class="button red-button click-animation top-margin" type="submit" name="save_three" value='{% translate "Delete" %}'>
+            <input class="button red-button click-animation top-margin" type="submit" name="save_three" value='{% translate "Delete" %}' autofocus="">
         </form>
     </div>
 

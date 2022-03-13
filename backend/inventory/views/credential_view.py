@@ -22,7 +22,6 @@ class ModelListView(ListView):
 
     model = MAIN_MODEL
     filterset = FILTER_SET
-    plural_panel = True
     list_box_view = True
     list_view = LIST_VIEW
 
@@ -36,7 +35,6 @@ class ModelCreateView(CreateView):
 
     model = MAIN_MODEL
     fields = EDIT_FIELDS
-    plural_panel = True
 
 
 class ModelUpdateView(UpdateView):

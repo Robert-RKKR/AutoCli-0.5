@@ -1,3 +1,6 @@
+# Django language import:
+from django.utils.translation import gettext_lazy as _
+
 # Base view Import:
 from ..subclasses.base_view import BaseView
 
@@ -9,7 +12,7 @@ class DetailView(BaseView, DjangoView):
 
     # Pre-populated attributes:
     template_name = 'base_views/detail_view.html'
-    singular_panel = True
+    singular = True
 
     def get(self, request, *args, **kwargs):
         """ Overwrite get function. """

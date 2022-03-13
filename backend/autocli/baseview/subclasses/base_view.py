@@ -8,9 +8,11 @@ from django.views import View
 # Create View class:
 class BaseView(View):
 
-    singular_panel = None
-    plural_panel = None
+    singular = None
+    plural = None
     list_box_view = None
+    page_name = 'AutoCli'
+    page_name_action = None
 
     def get(self, request, *args, **kwargs):
         """ Overwrite get function. """
@@ -44,6 +46,8 @@ class BaseView(View):
 
         # Add panel data to HTML template:
         context['panel'] = self._collect_panel_data()
+        # Add page name to HTML template:
+        context['page_name'] = self._create_page_name()
         # Submit current URL request to HTML template:
         url = self.request.build_absolute_uri()
         context['current_url'] = url
@@ -63,7 +67,37 @@ class BaseView(View):
         # Return context data:
         return context
 
+    def _create_page_name(self):
+        """ Create visible page name. """
+
+        # Collect class name:
+        class_name = self._collect_class_name()
+        # Page name:
+        page_name = class_name
+        # Create page name:
+        if self.page_name_action is not None:
+            # page_name = self.page_name_action + ' ' + class_name
+            if self.singular is True:
+                page_name = self.page_name_action + ' ' + self._collect_class_verbose_name()
+            elif self.plural is True:
+                page_name = self.page_name_action + ' ' + self._collect_class_verbose_name(plural=True)
+
+        # Return page name:
+        return page_name
+
+    def _collect_class_verbose_name(self, plural: bool = None):
+        """ Collect verbose class name. """
+
+        # Return verbose class name:
+        if plural is None:
+            return self.model._meta.verbose_name
+        else:
+            return self.model._meta.verbose_name_plural
+
     def _collect_class_name(self):
+        """ Collect class name. """
+
+        # Return class name:
         return self.model._meta.object_name.lower()
 
     def _chaeck_display_version(self, url):
@@ -124,10 +158,10 @@ class BaseView(View):
         if self.list_box_view is True:
             collected_panel_data['list_box_view'] = True
 
-        if self.singular_panel is True:
+        if self.singular is True:
             collected_panel_data['singular_panel'] = True
             return collected_panel_data
-        elif self.plural_panel is True:
+        elif self.plural is True:
             collected_panel_data['plural_panel'] = True
             return collected_panel_data
         else:

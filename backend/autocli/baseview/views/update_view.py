@@ -1,3 +1,6 @@
+# Django language import:
+from django.utils.translation import gettext_lazy as _
+
 # Base view Import:
 from ..subclasses.base_view import BaseView
 
@@ -13,7 +16,8 @@ class UpdateView(BaseView, DjangoView):
 
     # Pre-populated attributes:
     template_name = 'base_views/create_view.html'
-    singular_panel = True
+    singular = True
+    page_name_action = _('Update')
     success_url = '/'
 
     def get(self, request, *args, **kwargs):

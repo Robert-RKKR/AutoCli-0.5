@@ -387,13 +387,19 @@
 
 
 
-    /*   -----   CREATE VIEW   -----   */
+    /*   -----   CREATE AND UPDATE VIEW   -----   */
     .create-view-form {
         display: flex;
         flex-direction: column;
     }
 
     .create-view-form input {
+        background: var(--color_gray_background);
+        padding: var(--size_small);
+        border: none;
+    }
+
+    .create-view-form select {
         background: var(--color_gray_background);
         padding: var(--size_small);
         border: none;

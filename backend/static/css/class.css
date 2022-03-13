@@ -70,12 +70,6 @@
     height: 30px;
 }
 
-
-/*   -----   PANEL   -----   */
-.panel-button:hover {
-    background: red;
-}
-
 /*   -----   PADDING / MARGIN   -----   */
 .left-padding {
     padding-left: var(--size_small);
@@ -183,5 +177,9 @@
     
     .action-button:hover {
         background: var(--color_strong_red);
+    }
+
+    .active-action-button {
+        background: var(--color_strong_red)
     }
     

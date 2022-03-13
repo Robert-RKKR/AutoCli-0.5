@@ -18,7 +18,7 @@ var cookies = document.cookie.split(";");
 
 for(let i=0; i<cookies.length; i++) {
     let cookie = cookies[i].split("=");
-    if(cookie[0] === "open_menu_action") {
+    if(cookie[0] === "open_menu_action" || cookie[0] === " open_menu_action") {
         if(cookie[1] != "false") {
             let menu_number = parseInt(cookie[1]);
             for(let i=0; i<toggleButtons.length; i++) {
