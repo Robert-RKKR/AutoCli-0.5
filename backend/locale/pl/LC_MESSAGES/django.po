@@ -22,15 +22,15 @@ msgstr ""
 
 #: autocli/basemodel/basemodel.py:49
 msgid "Model"
-msgstr ""
+msgstr "Model"
 
 #: autocli/basemodel/basemodel.py:50
 msgid "Models"
-msgstr ""
+msgstr "Modele"
 
 #: autocli/basemodel/basemodel.py:68
 msgid "Created"
-msgstr ""
+msgstr "Utworzono"
 
 #: autocli/basemodel/basemodel.py:69
 msgid "Object create date."
@@ -93,7 +93,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Display all"
 msgid "List all"
-msgstr "LWyświetl wszystkie"
+msgstr "Wyświetl wszystkie"
 
 #: autocli/baseview/views/update_view.py:20
 #: templates/base_views/list_view.html:89
@@ -171,30 +171,30 @@ msgstr ""
 
 #: inventory/models/color_model.py:28 inventory/models/color_model.py:36
 msgid "Color"
-msgstr ""
+msgstr "Kolor"
 
 #: inventory/models/color_model.py:29 templates/base.html:90
 #: templates/base.html:149
 msgid "Colors"
-msgstr ""
+msgstr "Kolory"
 
 #: inventory/models/color_model.py:37
 msgid "Color hexadecimal value."
-msgstr ""
+msgstr "Wartość heksadecymalna koloru."
 
 #: inventory/models/color_model.py:42 inventory/models/color_model.py:43
 msgid "Colour field is mandatory."
-msgstr ""
+msgstr "Pole koloru jest obowiązkowe."
 
 #: inventory/models/color_model.py:44
 msgid "Color with this hexadecimal value already exists."
-msgstr ""
+msgstr "Kolor o tej wartości szesnastkowej już istnieje."
 
 #: inventory/models/color_model.py:45
 msgid ""
 "Enter the correct colour value. It must be a 3/6 hexadecimal number with # "
 "character on begining."
-msgstr ""
+msgstr "Wprowadź właściwą wartość koloru. Musi to być liczba szesnastkowa 3/6 ze znakiem # na początku."
 
 #: inventory/models/color_model.py:52 inventory/models/device_model.py:32
 #: inventory/models/folder_model.py:77 templates/base.html:74
@@ -204,54 +204,54 @@ msgstr "Urządzenia"
 
 #: inventory/models/color_model.py:53
 msgid "All devices that belongs to current color."
-msgstr ""
+msgstr "Wszystkie urządzenia należące do bieżącego koloru."
 
 #: inventory/models/color_model.py:58 inventory/models/folder_model.py:24
 #: templates/base.html:82
 msgid "Folders"
-msgstr ""
+msgstr "Foldery"
 
 #: inventory/models/color_model.py:59
 msgid "All folder that belongs to current color."
-msgstr ""
+msgstr "Wszystkie foldery należące do bieżącego koloru."
 
 #: inventory/models/color_model.py:64 inventory/models/credential_model.py:20
 #: templates/base.html:98 templates/base.html:133
 msgid "Credentials"
-msgstr ""
+msgstr "Poświadczenia"
 
 #: inventory/models/color_model.py:65
 msgid "All credentials that belongs to current color."
-msgstr ""
+msgstr "Wszystkie dane uwierzytelniające należące do bieżącego koloru."
 
 #: inventory/models/credential_model.py:19 inventory/models/device_model.py:90
 msgid "Credential"
-msgstr ""
+msgstr "Poświadczenie"
 
 #: inventory/models/credential_model.py:24
 msgid "Username"
-msgstr ""
+msgstr "Nazwa uytkownika"
 
 #: inventory/models/credential_model.py:25
 msgid "Local / remote user name."
-msgstr ""
+msgstr "Lokalna / zdalna nazwa użytkownika."
 
 #: inventory/models/credential_model.py:28
 #: inventory/models/credential_model.py:29
 msgid "Username field is mandatory."
-msgstr ""
+msgstr "Pole Nazwa użytkownika jest obowiązkowe."
 
 #: inventory/models/credential_model.py:30
 msgid "Enter the correct username value."
-msgstr ""
+msgstr "Wprowadź prawidłową wartość nazwy użytkownika."
 
 #: inventory/models/credential_model.py:34
 msgid "Password"
-msgstr ""
+msgstr "Hasło"
 
 #: inventory/models/credential_model.py:35
 msgid "Local / remote user password."
-msgstr ""
+msgstr "Hasło użytkownika lokalnego / zdalnego."
 
 #: inventory/models/device_model.py:31
 msgid "Device"
@@ -259,93 +259,93 @@ msgstr "Urządzenie"
 
 #: inventory/models/device_model.py:39
 msgid "SSH status"
-msgstr ""
+msgstr "Status protokołu SSH"
 
 #: inventory/models/device_model.py:40
 msgid "Status of SSH connection to the device."
-msgstr ""
+msgstr "Stan połączenia SSH z urządzeniem."
 
 #: inventory/models/device_model.py:44
 msgid "HTTPS status"
-msgstr ""
+msgstr "Status protokołu HTTPS"
 
 #: inventory/models/device_model.py:45
 msgid "Status of HTTPS connection to the device."
-msgstr ""
+msgstr "Stan połączenia HTTPS z urządzeniem."
 
 #: inventory/models/device_model.py:51
 msgid "Hostname"
-msgstr ""
+msgstr "Nazwa hosta"
 
 #: inventory/models/device_model.py:52
 msgid "Valid IP address or domain name."
-msgstr ""
+msgstr "Prawidłowy adres IP lub nazwa domeny."
 
 #: inventory/models/device_model.py:58 inventory/models/device_model.py:59
 msgid "IP / DNS name field is mandatory."
-msgstr ""
+msgstr "Pole Nazwa IP / DNS jest obowiązkowe."
 
 #: inventory/models/device_model.py:60
 msgid "Device with this hostname already exists."
-msgstr ""
+msgstr "Urządzenie o tej nazwie hosta już istnieje."
 
 #: inventory/models/device_model.py:61
 msgid ""
 "Enter a valid IP address or DNS resolvable hostname. It must contain 4 to 32 "
 "digits, letters and special characters -, _, . or spaces."
-msgstr ""
+msgstr "Wprowadź prawidłowy adres IP lub nazwę hosta rozwiązywalną przez DNS. Musi on zawierać od 4 do 32 cyfr, litery i znaki specjalne -, _, . lub spacje."
 
 #: inventory/models/device_model.py:65
 msgid "Device type"
-msgstr ""
+msgstr "Typ urządzenia"
 
 #: inventory/models/device_model.py:66
 msgid "Type of network device system."
-msgstr ""
+msgstr "Typ systemu urządzeń sieciowych."
 
 #: inventory/models/device_model.py:71
 msgid "Device Icon"
-msgstr ""
+msgstr "Ikona urządzenia"
 
 #: inventory/models/device_model.py:72
 msgid "Network device graphic representation."
-msgstr ""
+msgstr "Graficzna reprezentacja urządzenia sieciowego."
 
 #: inventory/models/device_model.py:77
 msgid "SSH port"
-msgstr ""
+msgstr "Port SSH"
 
 #: inventory/models/device_model.py:78
 msgid "SSH protocol port number."
-msgstr ""
+msgstr "Numer portu protokołu SSH."
 
 #: inventory/models/device_model.py:82
 msgid "HTTPS port"
-msgstr ""
+msgstr "Port HTTPS"
 
 #: inventory/models/device_model.py:83
 msgid "HTTPS protocol port number."
-msgstr ""
+msgstr "Numer portu protokołu HTTPS."
 
 #: inventory/models/device_model.py:91
 msgid "Credential needed to establish SSH / HTTPS connection."
-msgstr ""
+msgstr "Dane uwierzytelniające potrzebne do nawiązania połączenia SSH / HTTPS."
 
 #: inventory/models/device_model.py:97
 msgid "Secret"
-msgstr ""
+msgstr "Tajne hasło"
 
 #: inventory/models/device_model.py:98
 msgid "Network device secret password."
-msgstr ""
+msgstr "Tajne hasło urządzenia sieciowego."
 
 #: inventory/models/device_model.py:104
 msgid "API token"
-msgstr ""
+msgstr "Token API"
 
 #: inventory/models/device_model.py:105
 msgid "Network device API key."
-msgstr ""
+msgstr "Klucz API urządzenia sieciowego."
 
 #: inventory/models/device_model.py:111
 msgid "Certificate"
