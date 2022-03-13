@@ -2,7 +2,7 @@
 from django_filters import FilterSet
 
 # Models Imports:
-from inventory.models.color_model import Color
+from inventory.models.credential_model import Credential
 
 
 # Device filter class:
@@ -10,12 +10,9 @@ class ModelFilter(FilterSet):
 
     class Meta:
 
-        model = Color
+        model = Credential
         fields = {
             'active': ['exact'],
             'name': ['contains'],
-            'hexadecimal': ['contains'],
-            'devices': ['exact'],
-            'folders': ['exact'],
-            'credentials': ['exact'],
+            'username': ['contains'],
         }

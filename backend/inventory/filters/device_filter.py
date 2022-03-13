@@ -6,7 +6,7 @@ from inventory.models.device_model import Device
 
 
 # Device filter class:
-class DeviceFilter(FilterSet):
+class ModelFilter(FilterSet):
 
     class Meta:
 

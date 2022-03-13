@@ -2,7 +2,7 @@
 from ..subclasses.base_view import BaseView
 
 # Django Import:
-from django.shortcuts import redirect
+from django.urls import reverse_lazy
 
 
 # Django view Import:
@@ -40,7 +40,8 @@ class DeleteView(BaseView, DjangoView):
         # Submit object PK to HTML template:
         context['object_pk'] = self.object.pk
         # Create return URL:
-        self.success_url = redirect('device:list').url
+        requested_site = self._collect_class_name() + ':list'
+        self.success_url = reverse_lazy(requested_site)
 
         # Return HTML response:
         return super().post(request, *args, **kwargs)
