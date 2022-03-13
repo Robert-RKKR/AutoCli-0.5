@@ -93,6 +93,10 @@
     margin-right: var(--size_small);
 }
 
+.top-margin {
+    margin-top: var(--size_small);
+}
+
 /*   -----   LABEL   -----   */
 [label] {
     position: relative;

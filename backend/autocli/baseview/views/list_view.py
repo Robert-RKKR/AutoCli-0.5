@@ -64,15 +64,3 @@ class ListView(BaseView, DjangoView):
 
         # Return validated query string with & symbol or blank string:
         return '&' + validated_query_string if (validated_query_string and not self.no_search_result) else ''
-    
-    def get(self, request, *args, **kwargs):
-        """ Overwrite get function. """
-
-        # Inherit functionality from get function:
-        super().get(request, *args, **kwargs)
-        # Collect context data:
-        context = self.get_context_data()
-        # Add panel data to HTML template:
-        context['panel'] = self._collect_panel_data()
-        # Return HTML response:
-        return self.render_to_response(context)

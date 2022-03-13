@@ -12,12 +12,38 @@ class BaseView(View):
     plural_panel = None
     list_box_view = None
 
+    def get(self, request, *args, **kwargs):
+        """ Overwrite get function. """
+
+        # Inherit functionality from get function:
+        super().get(request, *args, **kwargs)
+        # Collect context data:
+        context = self.get_context_data()
+    
+        # Return HTML response:
+        return self.render_to_response(context)
+
+    def post(self, request, *args, **kwargs):
+        """ Overwrite post function. """
+
+        # Inherit functionality from get function:
+        super().get(request, *args, **kwargs)
+        # Collect context data:
+        context = self.get_context_data()
+
+        # Return HTML response:
+        return super().post(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs):
         """ Overwrite get_context_data function. """
 
         # Inherit functionality from get_context_data function:
         context = super().get_context_data(**kwargs)
 
+        ### Collect and send data to HTML template ###
+
+        # Add panel data to HTML template:
+        context['panel'] = self._collect_panel_data()
         # Submit current URL request to HTML template:
         url = self.request.build_absolute_uri()
         context['current_url'] = url
@@ -90,20 +116,19 @@ class BaseView(View):
 
         # Return panel dictionary:
         collected_panel_data = {
-            'action_objects': [],
+            'singular_panel': False,
+            'plural_panel': False,
             'list_box_view': False
         }
-        # 
-        model_name = self._collect_class_name() + '-create'
-
-        if self.plural_panel is True:
-            data = {
-                'ico': 'create',
-                'link': model_name
-            }
-            collected_panel_data['action_objects'].append(data)
 
         if self.list_box_view is True:
             collected_panel_data['list_box_view'] = True
 
-        return collected_panel_data
+        if self.singular_panel is True:
+            collected_panel_data['singular_panel'] = True
+            return collected_panel_data
+        elif self.plural_panel is True:
+            collected_panel_data['plural_panel'] = True
+            return collected_panel_data
+        else:
+            return collected_panel_data

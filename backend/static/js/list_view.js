@@ -21,9 +21,7 @@ var toggleTableButton = document.getElementById("edit-button");
 
 for(let i=0; i<cookies.length; i++) {
     let cookie = cookies[i].split("=");
-    console.log(cookie)
     if(cookie[0] === "edit_model_action") {
-        console.log(cookie[1])
         if(cookie[1] === "true") {
             if(activeBoxElementRow != null) {
                 for(let i=0; i<activeBoxElementRow.length; i++) {

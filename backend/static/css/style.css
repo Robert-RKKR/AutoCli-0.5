@@ -77,8 +77,8 @@ body {
 #page-left svg, img {
     fill: var(--color_font_white);
     cursor: pointer;
-    width: var(--size_big);
-    height: var(--size_big);
+    width: var(--size_super_big);
+    height: var(--size_super_big);
 }
 
 #page-left a {
@@ -216,7 +216,7 @@ body {
     #page-bottom {
         box-sizing: border-box;
         background: var(--color_page_background);
-        padding: var(--size_big) var(--size_medium);
+        padding: var(--size_medium);
     }
 
 

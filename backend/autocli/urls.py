@@ -11,6 +11,6 @@ urlpatterns = [
 
 # Application URLs patterns:
 urlpatterns += i18n_patterns (
-    path('inventory/', include('inventory.urls')),
+    path('inventory/device/', include('inventory.urls.device_url')),
     prefix_default_language=True,
 )

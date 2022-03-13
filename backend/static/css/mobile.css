@@ -5,8 +5,8 @@
     /*   -----   MEDIA >= 960px   -----   */
     @media only screen and (min-width: 960px) {
 
-        .model-item {
-            width: 50%;
+        #content-grid {
+            grid-template-columns: repeat(2, 1fr);
         }
 
         #page-left {
@@ -19,12 +19,8 @@
     /*   -----   MEDIA >= 1300px   -----   */
     @media only screen and (min-width: 1300px) {
 
-        .model-item {
-            width: 33.33333333%;
-        }
-
-        #object-grid {
-            column-count: 2;
+        #content-grid {
+            grid-template-columns: repeat(3, 1fr);
         }
 
 }
@@ -33,12 +29,8 @@
     /*   -----   MEDIA >= 1800px   -----   */
     @media only screen and (min-width: 1800px) {
 
-        .model-item {
-            width: 25%;
-        }
-
-        #object-grid {
-            column-count: 3;
+        #content-grid {
+            grid-template-columns: repeat(4, 1fr);
         }
 
 }
@@ -47,8 +39,8 @@
     /*   -----   MEDIA >= 2200px   -----   */
     @media only screen and (min-width: 2200px) {
 
-        .model-item {
-            width: 20%;
+        #content-grid {
+            grid-template-columns: repeat(5, 1fr);
         }
 
 }

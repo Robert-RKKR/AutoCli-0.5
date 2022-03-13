@@ -4,31 +4,43 @@
 {% block panel %}
     <!-- Model modify panel -->
     {% if panel %}
-    <div id="content-panel">
-        <div class="grid-box">
-            <div class="action-group">
-                {% if panel.list_box_view %}
-                    <a href="{{ current_url_no_display }}&display=1" class="action-button click-animation">
-                        <img src="{% static 'ico/main/grid.svg' %}" alt="Ico">
-                    </a>
-                    <a href="{{ current_url_no_display }}&display=2" class="action-button click-animation">
-                        <img src="{% static 'ico/main/list.svg' %}" alt="Ico">
-                    </a>
-                {% endif %}
-            </div>
-            {% if edit %}
+        <div id="content-panel">
+            <div class="grid-box">
                 <div class="action-group">
-                    <img id="edit-button" class="action-button click-animation" src="{% static 'ico/main/edit.svg' %}" alt="Ico">
+                    {% if panel.list_box_view %}
+                        <a href="{{ current_url_no_display }}&display=1" class="action-button click-animation">
+                            <img src="{% static 'ico/main/grid.svg' %}" alt="Ico">
+                        </a>
+                        <a href="{{ current_url_no_display }}&display=2" class="action-button click-animation">
+                            <img src="{% static 'ico/main/list.svg' %}" alt="Ico">
+                        </a>
+                    {% endif %}
                 </div>
-            {% endif %}
-            <div class="action-group">
-                {% for action in panel.action_objects %}
-                    <a href="{% url create_link %}" class="action-button click-animation">
-                        <img src="{% static 'ico/main/' %}{{ action.ico }}.svg" alt="X">
-                    </a>
-                {% endfor %}
+                {% if edit %}
+                    <div class="action-group">
+                        <img id="edit-button" class="action-button click-animation" src="{% static 'ico/main/edit.svg' %}" alt="Ico">
+                    </div>
+                {% endif %}
+                <div class="action-group">
+                    {% if panel.singular_panel %}
+                        {% if object_pk %}
+                            <a href="{% url update_link pk=object_pk %}" class="action-button click-animation">
+                                <img src="{% static 'ico/main/update' %}.svg" alt="X">
+                            </a>
+                            <a href="{% url delete_link pk=object_pk %}" class="action-button click-animation">
+                                <img src="{% static 'ico/main/delete' %}.svg" alt="X">
+                            </a>
+                        {% endif %}
+                        <a href="{% url create_link %}" class="action-button click-animation">
+                            <img src="{% static 'ico/main/create' %}.svg" alt="X">
+                        </a>
+                    {% elif panel.plural_panel %}
+                        <a href="{% url create_link %}" class="action-button click-animation">
+                            <img src="{% static 'ico/main/create' %}.svg" alt="X">
+                        </a>
+                    {% endif %}
+                </div>
             </div>
         </div>
-    </div>
     {% endif %}
 {% endblock %}
