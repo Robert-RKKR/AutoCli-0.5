@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-21 13:14+0000\n"
+"POT-Creation-Date: 2022-03-13 18:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,72 +18,94 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: autocli/basemodel/basemodel.py:49 autocli/basemodel/basemodel.py:141
+#: autocli/basemodel/basemodel.py:49
 msgid "Model"
 msgstr ""
 
-#: autocli/basemodel/basemodel.py:50 autocli/basemodel/basemodel.py:142
+#: autocli/basemodel/basemodel.py:50
 msgid "Models"
 msgstr ""
 
-#: autocli/basemodel/basemodel.py:64
+#: autocli/basemodel/basemodel.py:68
 msgid "Created"
 msgstr ""
 
-#: autocli/basemodel/basemodel.py:65
+#: autocli/basemodel/basemodel.py:69
 msgid "Object create date."
 msgstr ""
 
-#: autocli/basemodel/basemodel.py:69
+#: autocli/basemodel/basemodel.py:73
 msgid "Updated"
 msgstr ""
 
-#: autocli/basemodel/basemodel.py:70
+#: autocli/basemodel/basemodel.py:74
 msgid "Object last update date."
 msgstr ""
 
-#: autocli/basemodel/basemodel.py:77
+#: autocli/basemodel/basemodel.py:81
 msgid "Root"
 msgstr ""
 
-#: autocli/basemodel/basemodel.py:78
+#: autocli/basemodel/basemodel.py:82
 msgid "Root object is not deletable."
 msgstr ""
 
-#: autocli/basemodel/basemodel.py:82
+#: autocli/basemodel/basemodel.py:86
 msgid "Active"
 msgstr ""
 
-#: autocli/basemodel/basemodel.py:83
+#: autocli/basemodel/basemodel.py:87
 #, python-brace-format
 msgid "Status of {Meta.verbose_name} object."
 msgstr ""
 
-#: autocli/basemodel/basemodel.py:153
+#: autocli/basemodel/basemodel.py:93 templates/base_views/list_view.html:131
 msgid "Name"
 msgstr ""
 
-#: autocli/basemodel/basemodel.py:154 autocli/basemodel/basemodel.py:168
+#: autocli/basemodel/basemodel.py:94 autocli/basemodel/basemodel.py:108
 msgid "Xxx."
 msgstr ""
 
-#: autocli/basemodel/basemodel.py:167
+#: autocli/basemodel/basemodel.py:107
 msgid "Description"
 msgstr ""
 
-#: autocli/baseview/views/list_view.py:17
+#: autocli/baseview-old/views/list_view.py:17
 msgid "Display all"
 msgstr ""
 
-#: autocli/settings.py:134
-msgid "English"
+#: autocli/baseview/views/create_view.py:21
+msgid "Create a new"
 msgstr ""
 
-#: autocli/settings.py:135
-msgid "German"
+#: autocli/baseview/views/delete_view.py:22
+#: templates/base_views/delete_view.html:16
+#: templates/base_views/list_view.html:90
+#: templates/base_views/list_view.html:151
+#: venv/lib/python3.10/site-packages/django/forms/formsets.py:433
+msgid "Delete"
+msgstr ""
+
+#: autocli/baseview/views/list_view.py:23
+msgid "List all"
+msgstr ""
+
+#: autocli/baseview/views/update_view.py:20
+#: templates/base_views/list_view.html:89
+#: templates/base_views/list_view.html:150
+msgid "Update"
 msgstr ""
 
 #: autocli/settings.py:136
+msgid "English"
+msgstr ""
+
+#: autocli/settings.py:137
+msgid "German"
+msgstr ""
+
+#: autocli/settings.py:138
 msgid "Polish"
 msgstr ""
 
@@ -147,8 +169,8 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: inventory/models/color_model.py:29 templates/base.html:97
-#: templates/base.html:148
+#: inventory/models/color_model.py:29 templates/base.html:90
+#: templates/base.html:149
 msgid "Colors"
 msgstr ""
 
@@ -171,30 +193,31 @@ msgid ""
 msgstr ""
 
 #: inventory/models/color_model.py:52 inventory/models/device_model.py:32
-#: inventory/models/folde_model.py:77 templates/base.html:73
-#: templates/base.html:124
+#: inventory/models/folder_model.py:77 templates/base.html:74
+#: templates/base.html:125
 msgid "Devices"
 msgstr ""
 
 #: inventory/models/color_model.py:53
-msgid "All devices that belonge to current color."
+msgid "All devices that belongs to current color."
 msgstr ""
 
-#: inventory/models/color_model.py:58 inventory/models/folde_model.py:24
+#: inventory/models/color_model.py:58 inventory/models/folder_model.py:24
+#: templates/base.html:82
 msgid "Folders"
 msgstr ""
 
 #: inventory/models/color_model.py:59
-msgid "All folder that belonge to current color."
+msgid "All folder that belongs to current color."
 msgstr ""
 
 #: inventory/models/color_model.py:64 inventory/models/credential_model.py:20
-#: templates/base.html:81 templates/base.html:132
+#: templates/base.html:98 templates/base.html:133
 msgid "Credentials"
 msgstr ""
 
 #: inventory/models/color_model.py:65
-msgid "All credentials that belonge to current color."
+msgid "All credentials that belongs to current color."
 msgstr ""
 
 #: inventory/models/credential_model.py:19 inventory/models/device_model.py:90
@@ -328,67 +351,67 @@ msgstr ""
 msgid "Check network device certificate during HTTPS connection."
 msgstr ""
 
-#: inventory/models/folde_model.py:23
+#: inventory/models/folder_model.py:23 templates/base.html:141
 msgid "Folder"
 msgstr ""
 
-#: inventory/models/folde_model.py:28
+#: inventory/models/folder_model.py:28
 msgid "Default device Icon"
 msgstr ""
 
-#: inventory/models/folde_model.py:29
+#: inventory/models/folder_model.py:29
 msgid "Folder default network device graphic representation."
 msgstr ""
 
-#: inventory/models/folde_model.py:34
+#: inventory/models/folder_model.py:34
 msgid "Default SSH port"
 msgstr ""
 
-#: inventory/models/folde_model.py:35
+#: inventory/models/folder_model.py:35
 msgid "Folder default SSH protocol port number."
 msgstr ""
 
-#: inventory/models/folde_model.py:39
+#: inventory/models/folder_model.py:39
 msgid "Default HTTPS port"
 msgstr ""
 
-#: inventory/models/folde_model.py:40
+#: inventory/models/folder_model.py:40
 msgid "Folder default HTTPS protocol port number."
 msgstr ""
 
-#: inventory/models/folde_model.py:47
+#: inventory/models/folder_model.py:47
 msgid "Default credential"
 msgstr ""
 
-#: inventory/models/folde_model.py:48
+#: inventory/models/folder_model.py:48
 msgid "Folder default credential needed to establish SSH / HTTPS connection."
 msgstr ""
 
-#: inventory/models/folde_model.py:54
+#: inventory/models/folder_model.py:54
 msgid "Default secret"
 msgstr ""
 
-#: inventory/models/folde_model.py:55
+#: inventory/models/folder_model.py:55
 msgid "Folder default network device secret password."
 msgstr ""
 
-#: inventory/models/folde_model.py:61
+#: inventory/models/folder_model.py:61
 msgid "Default certificate"
 msgstr ""
 
-#: inventory/models/folde_model.py:62
+#: inventory/models/folder_model.py:62
 msgid "Folder default certificate check status."
 msgstr ""
 
-#: inventory/models/folde_model.py:69
+#: inventory/models/folder_model.py:69
 msgid "Root folder"
 msgstr ""
 
-#: inventory/models/folde_model.py:70
+#: inventory/models/folder_model.py:70
 msgid "The parent folder to witch the current folder belongs."
 msgstr ""
 
-#: inventory/models/folde_model.py:78
+#: inventory/models/folder_model.py:78
 msgid "All devices that belongs to current folder."
 msgstr ""
 
@@ -436,32 +459,84 @@ msgstr ""
 msgid "Default SSH/HTTPS connection password."
 msgstr ""
 
-#: templates/base.html:57
+#: templates/base.html:58
 msgid "Dashboard"
 msgstr ""
 
-#: templates/base.html:65
+#: templates/base.html:66
 msgid "Inventory"
 msgstr ""
 
-#: templates/base.html:89 templates/base.html:140
-msgid "Groups"
-msgstr ""
-
-#: templates/base.html:108
+#: templates/base.html:109
 msgid "Provisioning"
 msgstr ""
 
-#: templates/base.html:116
+#: templates/base.html:117
 msgid "Diagrams"
 msgstr ""
 
-#: templates/base.html:159
+#: templates/base.html:160
 msgid "Administration"
 msgstr ""
 
-#: templates/base.html:231
+#: templates/base.html:247
 msgid "AutoCli Network Automation Tool"
+msgstr ""
+
+#: templates/base_views/create_update_view.html:35
+msgid "Save and create new one"
+msgstr ""
+
+#: templates/base_views/create_update_view.html:36
+msgid "Save and stay"
+msgstr ""
+
+#: templates/base_views/create_update_view.html:37
+msgid "Save"
+msgstr ""
+
+#: templates/base_views/delete_view.html:14
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: templates/base_views/list_view.html:47
+msgid "There is nothing to display :("
+msgstr ""
+
+#: templates/base_views/list_view.html:137
+msgid "Actions"
+msgstr ""
+
+#: templates/base_views/list_view.html:169
+msgid "First page"
+msgstr ""
+
+#: templates/base_views/list_view.html:172
+msgid "Precious page"
+msgstr ""
+
+#: templates/base_views/list_view.html:178
+msgid "This is first page"
+msgstr ""
+
+#: templates/base_views/list_view.html:185
+msgid "Page"
+msgstr ""
+
+#: templates/base_views/list_view.html:185
+msgid "of"
+msgstr ""
+
+#: templates/base_views/list_view.html:190
+msgid "Next page"
+msgstr ""
+
+#: templates/base_views/list_view.html:193
+msgid "Last page"
+msgstr ""
+
+#: templates/base_views/list_view.html:199
+msgid "No more pages"
 msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/contrib/messages/apps.py:7
@@ -1023,10 +1098,6 @@ msgstr[1] ""
 #: venv/lib/python3.10/site-packages/django/forms/formsets.py:420
 #: venv/lib/python3.10/site-packages/django/forms/formsets.py:427
 msgid "Order"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/django/forms/formsets.py:433
-msgid "Delete"
 msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/forms/models.py:767
