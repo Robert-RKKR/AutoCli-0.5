@@ -102,7 +102,6 @@
     visibility: hidden;
     position: absolute;
     top: 40px;
-    left: 0;
     background: var(--color_light_blue);
     color: var(--color_font_gray_dark);
     padding: 5px;

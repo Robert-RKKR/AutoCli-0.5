@@ -28,6 +28,9 @@
                                 {{ field.errors }}
                             </div>
                         {% endif %}
+                        {% if field.help_text %}
+                            {{ field.help_text|safe }}
+                        {% endif %}
                     </div>
                 {% endfor %}
             </div>

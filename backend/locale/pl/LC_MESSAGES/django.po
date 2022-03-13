@@ -489,23 +489,23 @@ msgstr ""
 
 #: templates/base_views/create_update_view.html:35
 msgid "Save and create new one"
-msgstr ""
+msgstr "Zapisz i utwórz nowy"
 
 #: templates/base_views/create_update_view.html:36
 msgid "Save and stay"
-msgstr ""
+msgstr "Zapisz i zostań"
 
 #: templates/base_views/create_update_view.html:37
 msgid "Save"
-msgstr ""
+msgstr "Zapisz"
 
 #: templates/base_views/delete_view.html:14
 msgid "Are you sure you want to delete"
-msgstr ""
+msgstr "Czy na pewno chcesz usunąć"
 
 #: templates/base_views/list_view.html:47
 msgid "There is nothing to display :("
-msgstr ""
+msgstr "Nie ma nic do wyświetlania :("
 
 #: templates/base_views/list_view.html:137
 msgid "Actions"
