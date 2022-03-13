@@ -111,6 +111,12 @@
         width: 100%;
     }
 
+    #content-search input:focus{
+        background: var(--color_light_gray);
+        color: var(--color_page_left_one);
+        outline: none;
+    }
+
     #content-search button {
         padding: var(--size_medium);
         padding-left: var(--size_big);
@@ -138,7 +144,9 @@
 
     /*   -----   FILTER BAR   -----   */
     #content-filter {
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: var(--size_medium);
     }
 
     #content-filter input {
@@ -161,6 +169,21 @@
 
     #content-filter > div > label {
         margin-right: var(--size_medium);
+    }
+
+    #content-filter input:focus{
+        background: var(--color_light_red);
+        outline: none;
+    }
+
+    #content-filter select:focus{
+        background: var(--color_light_red);
+        outline: none;
+    }
+
+    #content-filter textarea:focus {
+        background: var(--color_light_red);
+        outline: none;
     }
 
 
@@ -393,18 +416,6 @@
         flex-direction: column;
     }
 
-    .create-view-form input {
-        background: var(--color_gray_background);
-        padding: var(--size_small);
-        border: none;
-    }
-
-    .create-view-form select {
-        background: var(--color_gray_background);
-        padding: var(--size_small);
-        border: none;
-    }
-
     .create-view-form-item:nth-last-child(n+2) {
         margin-bottom: var(--size_medium);
     }
@@ -418,3 +429,42 @@
     .create-view-buttons input {
         margin-right: var(--size_medium);
     }
+
+    .create-view-form-error {
+        margin-top: var(--size_small);
+        color: var(--color_strong_red);
+    }
+
+        /*   -----   CREATE AND UPDATE VIEW FORMS   -----   */
+        .create-view-form input {
+            background: var(--color_gray_background);
+            padding: var(--size_small);
+            border: none;
+        }
+
+        .create-view-form select {
+            background: var(--color_gray_background);
+            padding: var(--size_small);
+            border: none;
+        }
+
+        .create-view-form textarea {
+            background: var(--color_gray_background);
+            padding: var(--size_small);
+            border: none;
+        }
+
+        .create-view-form input:focus{
+            background: var(--color_light_red);
+            outline: none;
+        }
+
+        .create-view-form select:focus{
+            background: var(--color_light_red);
+            outline: none;
+        }
+
+        .create-view-form textarea:focus {
+            background: var(--color_light_red);
+            outline: none;
+        }

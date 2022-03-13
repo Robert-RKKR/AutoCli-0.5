@@ -17,27 +17,27 @@ from .validators import DescriptionValueValidator
 from .validators import NameValueValidator
 
 
-def primary_key_generator():
-    """ Generate primary key. """
+# def primary_key_generator():
+#     """ Generate primary key. """
 
-    # Create template string: 
-    template_string = string.ascii_lowercase + string.digits
+#     # Create template string: 
+#     template_string = string.ascii_lowercase + string.digits
 
-    # Primary key:
-    primary_key = ''
+#     # Primary key:
+#     primary_key = ''
 
-    # primary key generator:
-    for row in range(1, 31):
-        if row % 5 == 0:
-            if row != 30:
-                primary_key = primary_key + random.choice(template_string) + '-'
-            else:
-                primary_key = primary_key + random.choice(template_string)
-        else:
-            primary_key = primary_key + random.choice(template_string)
+#     # primary key generator:
+#     for row in range(1, 31):
+#         if row % 5 == 0:
+#             if row != 30:
+#                 primary_key = primary_key + random.choice(template_string) + '-'
+#             else:
+#                 primary_key = primary_key + random.choice(template_string)
+#         else:
+#             primary_key = primary_key + random.choice(template_string)
 
-    # Return generated primary key:
-    return primary_key
+#     # Return generated primary key:
+#     return primary_key
 
 
 # Base models class:
@@ -57,11 +57,11 @@ class BaseModel(models.Model):
     description_validator = DescriptionValueValidator()
 
     # Model ID:
-    id = models.CharField(
-        primary_key=True,
-        max_length=35,
-        editable=False,
-    )
+    # id = models.CharField(
+    #     primary_key=True,
+    #     max_length=35,
+    #     editable=False,
+    # )
 
     # Model data time information:
     created = models.DateTimeField(
@@ -120,43 +120,18 @@ class BaseModel(models.Model):
     def __str__(self) -> str:
         return self.name
 
-    # Override default Delete method:
-    def delete(self):
-        """
-            Override the default Delete method to see if the device was created by the Root user,
-            if true don't change anything, otherwise change deleted value to true.
-        """
-        # Check if root value is True:
-        if self.root == True:
-            # Inform the user that the object cannot be deleted because is a root object:
-            assert self.pk is not None, (
-                f"{self._meta.verbose_name} object can't be deleted because its a root object.")
-        else:
-            # Change deleted value to True, to inform that object is deleted:
-            self.deleted = True
-            self.save()
-
-    # Override default Sace method:
-    def save(self, *args, **kwargs):
-        if not self.id:
-            self.pk = primary_key_generator()
-
-        success = False
-        failures = 0
-        while not success:
-            try:
-                super(BaseModel, self).save(*args, **kwargs)
-            except IntegrityError:
-                failures += 1
-                if failures > 5:
-                    # Raise error in case of fails of quintuple save proccess:
-                    raise('Object save make a problem.')
-                else:
-                    # In case of auto-generate key duplication, regenerate key value:
-                    self.id = primary_key_generator()
-            else:
-                # Mark save process success:
-                 success = True
-
-        # Return success value:
-        return success
+    # # Override default Delete method:
+    # def delete(self):
+    #     """
+    #         Override the default Delete method to see if the device was created by the Root user,
+    #         if true don't change anything, otherwise change deleted value to true.
+    #     """
+    #     # Check if root value is True:
+    #     if self.root == True:
+    #         # Inform the user that the object cannot be deleted because is a root object:
+    #         assert self.pk is not None, (
+    #             f"{self._meta.verbose_name} object can't be deleted because its a root object.")
+    #     else:
+    #         # Change deleted value to True, to inform that object is deleted:
+    #         self.deleted = True
+    #         self.save()

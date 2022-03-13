@@ -15,7 +15,7 @@ from django.views.generic.edit import CreateView as DjangoView
 class CreateView(BaseView, DjangoView):
 
     # Pre-populated attributes:
-    template_name = 'base_views/create_view.html'
+    template_name = 'base_views/create_update_view.html'
     plural = True
     success_url = '/'
     page_name_action = _('Create a new')

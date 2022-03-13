@@ -15,7 +15,7 @@ from django.views.generic.edit import UpdateView as DjangoView
 class UpdateView(BaseView, DjangoView):
 
     # Pre-populated attributes:
-    template_name = 'base_views/create_view.html'
+    template_name = 'base_views/create_update_view.html'
     singular = True
     page_name_action = _('Update')
     success_url = '/'

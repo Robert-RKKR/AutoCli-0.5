@@ -15,8 +15,19 @@
                 {% csrf_token %}
                 {% for field in form %}
                     <div class="create-view-form-item">
-                        {{ field.label_tag }} {{ field }}
-                        {{ field.errors }}
+                        {% if 'id_hexadecimal' in field.label_tag %}
+                            {{ field.label_tag }}
+                            <input type="color" name="hexadecimal" maxlength="7" required="" id="id_hexadecimal">
+                            <div class="create-view-form-error">
+                                {{ field.errors }}
+                            </div>
+                        {% else %}
+                            {{ field.label_tag }}
+                            {{ field }}
+                            <div class="create-view-form-error">
+                                {{ field.errors }}
+                            </div>
+                        {% endif %}
                     </div>
                 {% endfor %}
             </div>
