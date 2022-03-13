@@ -14,7 +14,7 @@ from autocli.baseview.views.create_view import CreateView
 MAIN_MODEL = Folder
 FILTER_SET = ModelFilter
 LIST_VIEW = ['root_folder', 'ssh_port', 'ssh_port', 'https_port', 'credential']
-EDIT_FIELDS = ('active', 'name', 'root_folder', 'ssh_port', 'ssh_port', 'https_port', 'credential')
+EDIT_FIELDS = ('active', 'name', 'root_folder', 'ssh_port', 'ssh_port', 'https_port', 'credential', 'ico')
 
 
 # All default models views:

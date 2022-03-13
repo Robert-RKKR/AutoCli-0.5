@@ -13,7 +13,7 @@ from autocli.baseview.views.create_view import CreateView
 MAIN_MODEL = Device
 FILTER_SET = ModelFilter
 LIST_VIEW = ['hostname', 'device_type', 'ssh_port', 'https_port', 'credential', 'certificate']
-EDIT_FIELDS = ('active', 'name', 'hostname')
+EDIT_FIELDS = ('active', 'name', 'hostname', 'ico')
 
 
 # All default models views:

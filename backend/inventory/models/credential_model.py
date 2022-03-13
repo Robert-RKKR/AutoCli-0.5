@@ -5,6 +5,9 @@ from django.db import models
 # Base Model Import:
 from autocli.basemodel.basemodel import BaseModel
 
+# Constants Import:
+from ..constants import USER_ICONS
+
 
 # Credential model:
 class Credential(BaseModel):
@@ -36,4 +39,10 @@ class Credential(BaseModel):
         max_length=64,
         null=True,
         blank=True
+    )
+    ico = models.IntegerField(
+        verbose_name=_('Credential Icon'),
+        help_text=_('Credential graphical representation.'),
+        choices=USER_ICONS,
+        default=0
     )

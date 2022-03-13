@@ -13,7 +13,7 @@ from ..validators import HostnameValueValidator
 
 # Constants Import:
 from ..constants import DEVICETYPES
-from ..constants import ICONS
+from ..constants import DEVICE_ICONS
 
 
 
@@ -70,7 +70,7 @@ class Device(BaseModel):
     ico = models.IntegerField(
         verbose_name=_('Device Icon'),
         help_text=_('Network device graphic representation.'),
-        choices=ICONS,
+        choices=DEVICE_ICONS,
         default=0
     )
     ssh_port = models.IntegerField(

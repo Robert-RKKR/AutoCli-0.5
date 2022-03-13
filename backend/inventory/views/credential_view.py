@@ -14,7 +14,7 @@ from autocli.baseview.views.create_view import CreateView
 MAIN_MODEL = Credential
 FILTER_SET = ModelFilter
 LIST_VIEW = ['username']
-EDIT_FIELDS = ('active', 'name', 'username')
+EDIT_FIELDS = ('active', 'name', 'username', 'ico')
 
 
 # All default models views:

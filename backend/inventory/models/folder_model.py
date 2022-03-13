@@ -10,7 +10,7 @@ from .credential_model import Credential
 from .device_model import Device
 
 # Constants Import:
-from ..constants import ICONS
+from ..constants import FOLDER_ICONS
 
 
 # Folder model:
@@ -27,7 +27,7 @@ class Folder(BaseModel):
     ico = models.IntegerField(
         verbose_name=_('Default device Icon'),
         help_text=_('Folder default network device graphic representation.'),
-        choices=ICONS,
+        choices=FOLDER_ICONS,
         default=0
     )
     ssh_port = models.IntegerField(
