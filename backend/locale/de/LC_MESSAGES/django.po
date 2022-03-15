@@ -20,48 +20,48 @@ msgstr ""
 
 #: autocli/basemodel/basemodel.py:49
 msgid "Model"
-msgstr ""
+msgstr "Modell"
 
 #: autocli/basemodel/basemodel.py:50
 msgid "Models"
-msgstr ""
+msgstr "Modelle"
 
 #: autocli/basemodel/basemodel.py:68
 msgid "Created"
-msgstr ""
+msgstr "Erstellt"
 
 #: autocli/basemodel/basemodel.py:69
 msgid "Object create date."
-msgstr ""
+msgstr "Erstellungsdatum des Objekts."
 
 #: autocli/basemodel/basemodel.py:73
 msgid "Updated"
-msgstr ""
+msgstr "Aktualisiert"
 
 #: autocli/basemodel/basemodel.py:74
 msgid "Object last update date."
-msgstr ""
+msgstr "Datum der letzten Aktualisierung des Objekts."
 
 #: autocli/basemodel/basemodel.py:81
 msgid "Root"
-msgstr ""
+msgstr "Wurzel"
 
 #: autocli/basemodel/basemodel.py:82
 msgid "Root object is not deletable."
-msgstr ""
+msgstr "Das Wurzelobjekt ist nicht löschbar."
 
 #: autocli/basemodel/basemodel.py:86
 msgid "Active"
-msgstr ""
+msgstr "Aktiv"
 
 #: autocli/basemodel/basemodel.py:87
 #, python-brace-format
 msgid "Status of {Meta.verbose_name} object."
-msgstr ""
+msgstr "Status des Objekts {Meta.verbose_name}."
 
 #: autocli/basemodel/basemodel.py:93 templates/base_views/list_view.html:131
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: autocli/basemodel/basemodel.py:94 autocli/basemodel/basemodel.py:108
 msgid "Xxx."
@@ -69,15 +69,15 @@ msgstr ""
 
 #: autocli/basemodel/basemodel.py:107
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: autocli/baseview-old/views/list_view.py:17
 msgid "Display all"
-msgstr ""
+msgstr "Alle anzeigen"
 
 #: autocli/baseview/views/create_view.py:21
 msgid "Create a new"
-msgstr ""
+msgstr "Erstellen Sie eine neue"
 
 #: autocli/baseview/views/delete_view.py:22
 #: templates/base_views/delete_view.html:16
@@ -85,65 +85,65 @@ msgstr ""
 #: templates/base_views/list_view.html:151
 #: venv/lib/python3.10/site-packages/django/forms/formsets.py:433
 msgid "Delete"
-msgstr ""
+msgstr "Löschen"
 
 #: autocli/baseview/views/list_view.py:23
 msgid "List all"
-msgstr ""
+msgstr "Alle auflisten"
 
 #: autocli/baseview/views/update_view.py:20
 #: templates/base_views/list_view.html:89
 #: templates/base_views/list_view.html:150
 msgid "Update"
-msgstr ""
+msgstr "Update"
 
 #: autocli/settings.py:136
 msgid "English"
-msgstr ""
+msgstr "Englisch"
 
 #: autocli/settings.py:137
 msgid "German"
-msgstr ""
+msgstr "Deutsch"
 
 #: autocli/settings.py:138
 msgid "Polish"
-msgstr ""
+msgstr "Polnisch"
 
 #: inventory/admin.py:23 inventory/admin.py:63
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: inventory/admin.py:27 inventory/admin.py:67
 msgid "Basic settings"
-msgstr ""
+msgstr "Grundeinstellungen"
 
 #: inventory/admin.py:31
 msgid "Relationships with other models"
-msgstr ""
+msgstr "Beziehungen zu anderen Modellen"
 
 #: inventory/admin.py:35
 msgid "Defaults main values"
-msgstr ""
+msgstr "Voreingestellte Hauptwerte"
 
 #: inventory/admin.py:39
 msgid "Defaults security and credentials"
-msgstr ""
+msgstr "Standardwerte für Sicherheit und Berechtigungsnachweise"
 
 #: inventory/admin.py:71
 msgid "Additional settings"
-msgstr ""
+msgstr "Zusätzliche Einstellungen"
 
 #: inventory/admin.py:75
 msgid "Security and credentials"
-msgstr ""
+msgstr "Sicherheit und Berechtigungsnachweise"
 
 #: inventory/constants.py:26
 msgid "Undefinded"
-msgstr ""
+msgstr "Unentschlossen"
 
 #: inventory/constants.py:27
 msgid "Autodetect"
-msgstr ""
+msgstr "Autodetect"
 
 #: inventory/constants.py:28
 msgid "Cisco IOS"
@@ -167,297 +167,297 @@ msgstr ""
 
 #: inventory/models/color_model.py:28 inventory/models/color_model.py:36
 msgid "Color"
-msgstr ""
+msgstr "Farbe"
 
 #: inventory/models/color_model.py:29 templates/base.html:90
 #: templates/base.html:149
 msgid "Colors"
-msgstr ""
+msgstr "Farben"
 
 #: inventory/models/color_model.py:37
 msgid "Color hexadecimal value."
-msgstr ""
+msgstr "Hexadezimaler Wert der Farbe."
 
 #: inventory/models/color_model.py:42 inventory/models/color_model.py:43
 msgid "Colour field is mandatory."
-msgstr ""
+msgstr "Das Feld Farbe ist obligatorisch."
 
 #: inventory/models/color_model.py:44
 msgid "Color with this hexadecimal value already exists."
-msgstr ""
+msgstr "Farbe mit diesem Hexadezimalwert existiert bereits."
 
 #: inventory/models/color_model.py:45
 msgid ""
 "Enter the correct colour value. It must be a 3/6 hexadecimal number with # "
 "character on begining."
-msgstr ""
+msgstr "Geben Sie den richtigen Farbwert ein. Es muss sich um eine 3/6 Hexadezimalzahl mit dem Zeichen # am Anfang handeln."
 
 #: inventory/models/color_model.py:52 inventory/models/device_model.py:32
 #: inventory/models/folder_model.py:77 templates/base.html:74
 #: templates/base.html:125
 msgid "Devices"
-msgstr ""
+msgstr "Geräte"
 
 #: inventory/models/color_model.py:53
 msgid "All devices that belongs to current color."
-msgstr ""
+msgstr "Alle Geräte, die zur aktuellen Farbe gehören."
 
 #: inventory/models/color_model.py:58 inventory/models/folder_model.py:24
 #: templates/base.html:82
 msgid "Folders"
-msgstr ""
+msgstr "Ordner"
 
 #: inventory/models/color_model.py:59
 msgid "All folder that belongs to current color."
-msgstr ""
+msgstr "Alle Ordner, die zur aktuellen Farbe gehören."
 
 #: inventory/models/color_model.py:64 inventory/models/credential_model.py:20
 #: templates/base.html:98 templates/base.html:133
 msgid "Credentials"
-msgstr ""
+msgstr "Berechtigungsnachweise"
 
 #: inventory/models/color_model.py:65
 msgid "All credentials that belongs to current color."
-msgstr ""
+msgstr "Alle Berechtigungsnachweise, die zur aktuellen Farbe gehören."
 
 #: inventory/models/credential_model.py:19 inventory/models/device_model.py:90
 msgid "Credential"
-msgstr ""
+msgstr "Ausweis"
 
 #: inventory/models/credential_model.py:24
 msgid "Username"
-msgstr ""
+msgstr "Benutzername"
 
 #: inventory/models/credential_model.py:25
 msgid "Local / remote user name."
-msgstr ""
+msgstr "Lokaler / Remote-Benutzername."
 
 #: inventory/models/credential_model.py:28
 #: inventory/models/credential_model.py:29
 msgid "Username field is mandatory."
-msgstr ""
+msgstr "Das Feld Benutzername ist obligatorisch."
 
 #: inventory/models/credential_model.py:30
 msgid "Enter the correct username value."
-msgstr ""
+msgstr "Geben Sie den richtigen Wert für den Benutzernamen ein."
 
 #: inventory/models/credential_model.py:34
 msgid "Password"
-msgstr ""
+msgstr "Passwort"
 
 #: inventory/models/credential_model.py:35
 msgid "Local / remote user password."
-msgstr ""
+msgstr "Passwort des lokalen/entfernten Benutzers."
 
 #: inventory/models/device_model.py:31
 msgid "Device"
-msgstr ""
+msgstr "Gerät"
 
 #: inventory/models/device_model.py:39
 msgid "SSH status"
-msgstr ""
+msgstr "SSH-Status"
 
 #: inventory/models/device_model.py:40
 msgid "Status of SSH connection to the device."
-msgstr ""
+msgstr "Status der SSH-Verbindung zum Gerät."
 
 #: inventory/models/device_model.py:44
 msgid "HTTPS status"
-msgstr ""
+msgstr "HTTPS-Status"
 
 #: inventory/models/device_model.py:45
 msgid "Status of HTTPS connection to the device."
-msgstr ""
+msgstr "Status der HTTPS-Verbindung zum Gerät."
 
 #: inventory/models/device_model.py:51
 msgid "Hostname"
-msgstr ""
+msgstr "Hostname"
 
 #: inventory/models/device_model.py:52
 msgid "Valid IP address or domain name."
-msgstr ""
+msgstr "Gültige IP-Adresse oder Domänenname."
 
 #: inventory/models/device_model.py:58 inventory/models/device_model.py:59
 msgid "IP / DNS name field is mandatory."
-msgstr ""
+msgstr "Das Feld IP / DNS-Name ist obligatorisch."
 
 #: inventory/models/device_model.py:60
 msgid "Device with this hostname already exists."
-msgstr ""
+msgstr "Gerät mit diesem Hostnamen existiert bereits."
 
 #: inventory/models/device_model.py:61
 msgid ""
 "Enter a valid IP address or DNS resolvable hostname. It must contain 4 to 32 "
 "digits, letters and special characters -, _, . or spaces."
-msgstr ""
+msgstr "Geben Sie eine gültige IP-Adresse oder einen per DNS auflösbaren Hostnamen ein. Er muss 4 bis 32 Ziffern, Buchstaben und Sonderzeichen -, _, . oder Leerzeichen enthalten."
 
 #: inventory/models/device_model.py:65
 msgid "Device type"
-msgstr ""
+msgstr "Gerätetyp"
 
 #: inventory/models/device_model.py:66
 msgid "Type of network device system."
-msgstr ""
+msgstr "Typ des Netzwerkgerätesystems."
 
 #: inventory/models/device_model.py:71
 msgid "Device Icon"
-msgstr ""
+msgstr "Gerätesymbol"
 
 #: inventory/models/device_model.py:72
 msgid "Network device graphic representation."
-msgstr ""
+msgstr "Grafische Darstellung der Netzwerkgeräte."
 
 #: inventory/models/device_model.py:77
 msgid "SSH port"
-msgstr ""
+msgstr "SSH-Anschluss"
 
 #: inventory/models/device_model.py:78
 msgid "SSH protocol port number."
-msgstr ""
+msgstr "Portnummer des SSH-Protokolls."
 
 #: inventory/models/device_model.py:82
 msgid "HTTPS port"
-msgstr ""
+msgstr "HTTPS-Anschluss"
 
 #: inventory/models/device_model.py:83
 msgid "HTTPS protocol port number."
-msgstr ""
+msgstr "Portnummer des HTTPS-Protokolls."
 
 #: inventory/models/device_model.py:91
 msgid "Credential needed to establish SSH / HTTPS connection."
-msgstr ""
+msgstr "Für den Aufbau einer SSH-/HTTPS-Verbindung benötigte Zugangsdaten."
 
 #: inventory/models/device_model.py:97
 msgid "Secret"
-msgstr ""
+msgstr "Secret"
 
 #: inventory/models/device_model.py:98
 msgid "Network device secret password."
-msgstr ""
+msgstr "Geheimes Passwort des Netzwerkgeräts."
 
 #: inventory/models/device_model.py:104
 msgid "API token"
-msgstr ""
+msgstr "API-Token"
 
 #: inventory/models/device_model.py:105
 msgid "Network device API key."
-msgstr ""
+msgstr "API-Schlüssel des Netzwerkgeräts."
 
 #: inventory/models/device_model.py:111
 msgid "Certificate"
-msgstr ""
+msgstr "Zertifikat"
 
 #: inventory/models/device_model.py:112
 msgid "Check network device certificate during HTTPS connection."
-msgstr ""
+msgstr "Prüfen Sie das Zertifikat des Netzwerkgeräts während der HTTPS-Verbindung."
 
 #: inventory/models/folder_model.py:23 templates/base.html:141
 msgid "Folder"
-msgstr ""
+msgstr "Mappe"
 
 #: inventory/models/folder_model.py:28
 msgid "Default device Icon"
-msgstr ""
+msgstr "Standardgerätesymbol"
 
 #: inventory/models/folder_model.py:29
 msgid "Folder default network device graphic representation."
-msgstr ""
+msgstr "Ordner für die grafische Darstellung von Netzwerkgeräten."
 
 #: inventory/models/folder_model.py:34
 msgid "Default SSH port"
-msgstr ""
+msgstr "Standard-SSH-Anschluss"
 
 #: inventory/models/folder_model.py:35
 msgid "Folder default SSH protocol port number."
-msgstr ""
+msgstr "Standard-SSH-Protokoll-Portnummer des Ordners."
 
 #: inventory/models/folder_model.py:39
 msgid "Default HTTPS port"
-msgstr ""
+msgstr "Standard-HTTPS-Anschluss"
 
 #: inventory/models/folder_model.py:40
 msgid "Folder default HTTPS protocol port number."
-msgstr ""
+msgstr "Standard-HTTPS-Protokoll-Portnummer des Ordners."
 
 #: inventory/models/folder_model.py:47
 msgid "Default credential"
-msgstr ""
+msgstr "Standard-Berechtigungsnachweis"
 
 #: inventory/models/folder_model.py:48
 msgid "Folder default credential needed to establish SSH / HTTPS connection."
-msgstr ""
+msgstr "Standard-Anmeldeinformationen, die für den Aufbau einer SSH-/HTTPS-Verbindung erforderlich sind."
 
 #: inventory/models/folder_model.py:54
 msgid "Default secret"
-msgstr ""
+msgstr "Standardgeheimnis"
 
 #: inventory/models/folder_model.py:55
 msgid "Folder default network device secret password."
-msgstr ""
+msgstr "Geheimes Kennwort für das Standard-Netzwerkgerät im Ordner."
 
 #: inventory/models/folder_model.py:61
 msgid "Default certificate"
-msgstr ""
+msgstr "Standard-Zertifikat"
 
 #: inventory/models/folder_model.py:62
 msgid "Folder default certificate check status."
-msgstr ""
+msgstr "Standard-Zertifikatsprüfungsstatus des Ordners."
 
 #: inventory/models/folder_model.py:69
 msgid "Root folder"
-msgstr ""
+msgstr "Wurzelordner"
 
 #: inventory/models/folder_model.py:70
 msgid "The parent folder to witch the current folder belongs."
-msgstr ""
+msgstr "Der übergeordnete Ordner, zu dem der aktuelle Ordner gehört."
 
 #: inventory/models/folder_model.py:78
 msgid "All devices that belongs to current folder."
-msgstr ""
+msgstr "Alle Geräte, die zum aktuellen Ordner gehören."
 
 #: logger/models/log_details_model.py:16
 msgid "Log detail"
-msgstr ""
+msgstr "Log Detail"
 
 #: logger/models/log_details_model.py:17
 msgid "Logs details"
-msgstr ""
+msgstr "Details zu den Protokollen"
 
 #: logger/models/log_model.py:22
 msgid "Log"
-msgstr ""
+msgstr "Protokoll"
 
 #: logger/models/log_model.py:23
 msgid "Logs"
-msgstr ""
+msgstr "Protokolle"
 
 #: settings/models/user_settings_model.py:17
 msgid "User settings"
-msgstr ""
+msgstr "Benutzereinstellungen"
 
 #: settings/models/user_settings_model.py:18
 msgid "Users settings"
-msgstr ""
+msgstr "Benutzereinstellungen"
 
 #: settings/models/user_settings_model.py:23
 msgid "User"
-msgstr ""
+msgstr "Benutzer"
 
 #: settings/models/user_settings_model.py:29
 msgid "Default username."
-msgstr ""
+msgstr "Standard-Benutzername."
 
 #: settings/models/user_settings_model.py:30
 msgid "Default SSH/HTTPS connection username."
-msgstr ""
+msgstr "Standard-Benutzername für SSH/HTTPS-Verbindungen."
 
 #: settings/models/user_settings_model.py:35
 msgid "Default password."
-msgstr ""
+msgstr "Standard-Passwort."
 
 #: settings/models/user_settings_model.py:36
 msgid "Default SSH/HTTPS connection password."
-msgstr ""
+msgstr "Standard-Passwort für die SSH/HTTPS-Verbindung."
 
 #: templates/base.html:58
 msgid "Dashboard"
@@ -465,79 +465,79 @@ msgstr ""
 
 #: templates/base.html:66
 msgid "Inventory"
-msgstr ""
+msgstr "Bestandsaufnahme"
 
 #: templates/base.html:109
 msgid "Provisioning"
-msgstr ""
+msgstr "Bereitstellung"
 
 #: templates/base.html:117
 msgid "Diagrams"
-msgstr ""
+msgstr "Diagramme"
 
 #: templates/base.html:160
 msgid "Administration"
-msgstr ""
+msgstr "Verwaltung"
 
 #: templates/base.html:247
 msgid "AutoCli Network Automation Tool"
-msgstr ""
+msgstr "AutoCli Netzwerk-Automatisierungswerkzeug"
 
 #: templates/base_views/create_update_view.html:35
 msgid "Save and create new one"
-msgstr ""
+msgstr "Speichern und neu erstellen"
 
 #: templates/base_views/create_update_view.html:36
 msgid "Save and stay"
-msgstr ""
+msgstr "Sparen und bleiben"
 
 #: templates/base_views/create_update_view.html:37
 msgid "Save"
-msgstr ""
+msgstr "Speichern Sie"
 
 #: templates/base_views/delete_view.html:14
 msgid "Are you sure you want to delete"
-msgstr ""
+msgstr "Sind Sie sicher, dass Sie Folgendes löschen möchten"
 
 #: templates/base_views/list_view.html:47
 msgid "There is nothing to display :("
-msgstr ""
+msgstr "Es gibt nichts zu sehen :("
 
 #: templates/base_views/list_view.html:137
 msgid "Actions"
-msgstr ""
+msgstr "Aktionen"
 
 #: templates/base_views/list_view.html:169
 msgid "First page"
-msgstr ""
+msgstr "Erste Seite"
 
 #: templates/base_views/list_view.html:172
 msgid "Precious page"
-msgstr ""
+msgstr "Vorherige Seite"
 
 #: templates/base_views/list_view.html:178
 msgid "This is first page"
-msgstr ""
+msgstr "Dies ist die erste Seite"
 
 #: templates/base_views/list_view.html:185
 msgid "Page"
-msgstr ""
+msgstr "Seite"
 
 #: templates/base_views/list_view.html:185
 msgid "of"
-msgstr ""
+msgstr "von"
 
 #: templates/base_views/list_view.html:190
 msgid "Next page"
-msgstr ""
+msgstr "Nächste Seite"
 
 #: templates/base_views/list_view.html:193
 msgid "Last page"
-msgstr ""
+msgstr "Letzte Seite"
 
 #: templates/base_views/list_view.html:199
 msgid "No more pages"
-msgstr ""
+msgstr "Keine weiteren Seiten"
 
 #: venv/lib/python3.10/site-packages/django/contrib/messages/apps.py:7
 msgid "Messages"

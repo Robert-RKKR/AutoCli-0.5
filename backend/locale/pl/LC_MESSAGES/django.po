@@ -34,36 +34,36 @@ msgstr "Utworzono"
 
 #: autocli/basemodel/basemodel.py:69
 msgid "Object create date."
-msgstr ""
+msgstr "Data utworzenia obiektu."
 
 #: autocli/basemodel/basemodel.py:73
 msgid "Updated"
-msgstr ""
+msgstr "Aktualizacja"
 
 #: autocli/basemodel/basemodel.py:74
 msgid "Object last update date."
-msgstr ""
+msgstr "Data ostatniej aktualizacji obiektu."
 
 #: autocli/basemodel/basemodel.py:81
 msgid "Root"
-msgstr ""
+msgstr "Root"
 
 #: autocli/basemodel/basemodel.py:82
 msgid "Root object is not deletable."
-msgstr ""
+msgstr "Obiekt Root nie jest możliwy do usunięcia."
 
 #: autocli/basemodel/basemodel.py:86
 msgid "Active"
-msgstr ""
+msgstr "Aktywny"
 
 #: autocli/basemodel/basemodel.py:87
 #, python-brace-format
 msgid "Status of {Meta.verbose_name} object."
-msgstr ""
+msgstr "Status obiektu {Meta.verbose_name}"
 
 #: autocli/basemodel/basemodel.py:93 templates/base_views/list_view.html:131
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: autocli/basemodel/basemodel.py:94 autocli/basemodel/basemodel.py:108
 msgid "Xxx."
@@ -71,7 +71,7 @@ msgstr ""
 
 #: autocli/basemodel/basemodel.py:107
 msgid "Description"
-msgstr ""
+msgstr "Opis"
 
 #: autocli/baseview-old/views/list_view.py:17
 msgid "Display all"
@@ -79,7 +79,7 @@ msgstr "LWyświetl wszystkie"
 
 #: autocli/baseview/views/create_view.py:21
 msgid "Create a new"
-msgstr ""
+msgstr "Utwórz nowy"
 
 #: autocli/baseview/views/delete_view.py:22
 #: templates/base_views/delete_view.html:16
@@ -87,7 +87,7 @@ msgstr ""
 #: templates/base_views/list_view.html:151
 #: venv/lib/python3.10/site-packages/django/forms/formsets.py:433
 msgid "Delete"
-msgstr ""
+msgstr "Usuń"
 
 #: autocli/baseview/views/list_view.py:23
 #, fuzzy
@@ -99,55 +99,55 @@ msgstr "Wyświetl wszystkie"
 #: templates/base_views/list_view.html:89
 #: templates/base_views/list_view.html:150
 msgid "Update"
-msgstr ""
+msgstr "Aktualizacja"
 
 #: autocli/settings.py:136
 msgid "English"
-msgstr ""
+msgstr "Angielski"
 
 #: autocli/settings.py:137
 msgid "German"
-msgstr ""
+msgstr "Niemiecki"
 
 #: autocli/settings.py:138
 msgid "Polish"
-msgstr ""
+msgstr "Polski"
 
 #: inventory/admin.py:23 inventory/admin.py:63
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: inventory/admin.py:27 inventory/admin.py:67
 msgid "Basic settings"
-msgstr ""
+msgstr "Ustawienia podstawowe"
 
 #: inventory/admin.py:31
 msgid "Relationships with other models"
-msgstr ""
+msgstr "Związki z innymi modelami"
 
 #: inventory/admin.py:35
 msgid "Defaults main values"
-msgstr ""
+msgstr "Domyślne wartości główne"
 
 #: inventory/admin.py:39
 msgid "Defaults security and credentials"
-msgstr ""
+msgstr "Domyślne zabezpieczenia i dane uwierzytelniające"
 
 #: inventory/admin.py:71
 msgid "Additional settings"
-msgstr ""
+msgstr "Ustawienia dodatkowe"
 
 #: inventory/admin.py:75
 msgid "Security and credentials"
-msgstr ""
+msgstr "Bezpieczeństwo i dane uwierzytelniające"
 
 #: inventory/constants.py:26
 msgid "Undefinded"
-msgstr ""
+msgstr "Nie określony"
 
 #: inventory/constants.py:27
 msgid "Autodetect"
-msgstr ""
+msgstr "Autodetekcja"
 
 #: inventory/constants.py:28
 msgid "Cisco IOS"
@@ -349,123 +349,123 @@ msgstr "Klucz API urządzenia sieciowego."
 
 #: inventory/models/device_model.py:111
 msgid "Certificate"
-msgstr ""
+msgstr "Certyfikat"
 
 #: inventory/models/device_model.py:112
 msgid "Check network device certificate during HTTPS connection."
-msgstr ""
+msgstr "Sprawdź certyfikat urządzenia sieciowego podczas połączenia HTTPS."
 
 #: inventory/models/folder_model.py:23 templates/base.html:141
 msgid "Folder"
-msgstr ""
+msgstr "Folder"
 
 #: inventory/models/folder_model.py:28
 msgid "Default device Icon"
-msgstr ""
+msgstr "Ikona urządzenia domyślnego"
 
 #: inventory/models/folder_model.py:29
 msgid "Folder default network device graphic representation."
-msgstr ""
+msgstr "Folder domyślnej reprezentacji graficznej urządzenia sieciowego."
 
 #: inventory/models/folder_model.py:34
 msgid "Default SSH port"
-msgstr ""
+msgstr "Domyślny port SSH"
 
 #: inventory/models/folder_model.py:35
 msgid "Folder default SSH protocol port number."
-msgstr ""
+msgstr "Folder - domyślny numer portu protokołu SSH."
 
 #: inventory/models/folder_model.py:39
 msgid "Default HTTPS port"
-msgstr ""
+msgstr "Domyślny port HTTPS"
 
 #: inventory/models/folder_model.py:40
 msgid "Folder default HTTPS protocol port number."
-msgstr ""
+msgstr "Folder - domyślny numer portu protokołu HTTPS."
 
 #: inventory/models/folder_model.py:47
 msgid "Default credential"
-msgstr ""
+msgstr "Domyślne dane uwierzytelniające"
 
 #: inventory/models/folder_model.py:48
 msgid "Folder default credential needed to establish SSH / HTTPS connection."
-msgstr ""
+msgstr "Folder - domyślne dane uwierzytelniające potrzebne do nawiązania połączenia SSH / HTTPS."
 
 #: inventory/models/folder_model.py:54
 msgid "Default secret"
-msgstr ""
+msgstr "Domyślne tajne hasło"
 
 #: inventory/models/folder_model.py:55
 msgid "Folder default network device secret password."
-msgstr ""
+msgstr "Folder - domyślne tajne hasło urządzenia sieciowego."
 
 #: inventory/models/folder_model.py:61
 msgid "Default certificate"
-msgstr ""
+msgstr "Certyfikat domyślny"
 
 #: inventory/models/folder_model.py:62
 msgid "Folder default certificate check status."
-msgstr ""
+msgstr "Folder - status sprawdzania domyślnego certyfikatu."
 
 #: inventory/models/folder_model.py:69
 msgid "Root folder"
-msgstr ""
+msgstr "Folder główny"
 
 #: inventory/models/folder_model.py:70
 msgid "The parent folder to witch the current folder belongs."
-msgstr ""
+msgstr "Folder nadrzędny, do którego należy bieżący folder."
 
 #: inventory/models/folder_model.py:78
 msgid "All devices that belongs to current folder."
-msgstr ""
+msgstr "Wszystkie urządzenia należące do bieżącego folderu."
 
 #: logger/models/log_details_model.py:16
 msgid "Log detail"
-msgstr ""
+msgstr "Szczegóły dotyczące logu"
 
 #: logger/models/log_details_model.py:17
 msgid "Logs details"
-msgstr ""
+msgstr "Szczegóły dotyczące logów"
 
 #: logger/models/log_model.py:22
 msgid "Log"
-msgstr ""
+msgstr "Log"
 
 #: logger/models/log_model.py:23
 msgid "Logs"
-msgstr ""
+msgstr "Logi"
 
 #: settings/models/user_settings_model.py:17
 msgid "User settings"
-msgstr ""
+msgstr "Ustawienia użytkownika"
 
 #: settings/models/user_settings_model.py:18
 msgid "Users settings"
-msgstr ""
+msgstr "Ustawienia użytkowników"
 
 #: settings/models/user_settings_model.py:23
 msgid "User"
-msgstr ""
+msgstr "Użytkownik"
 
 #: settings/models/user_settings_model.py:29
 msgid "Default username."
-msgstr ""
+msgstr "Domyślna nazwa użytkownika."
 
 #: settings/models/user_settings_model.py:30
 msgid "Default SSH/HTTPS connection username."
-msgstr ""
+msgstr "Domyślna nazwa użytkownika połączenia SSH/HTTPS."
 
 #: settings/models/user_settings_model.py:35
 msgid "Default password."
-msgstr ""
+msgstr "Domyślne hasło."
 
 #: settings/models/user_settings_model.py:36
 msgid "Default SSH/HTTPS connection password."
-msgstr ""
+msgstr "Domyślne hasło połączenia SSH/HTTPS."
 
 #: templates/base.html:58
 msgid "Dashboard"
-msgstr ""
+msgstr "Panel główny"
 
 #: templates/base.html:66
 msgid "Inventory"
@@ -473,19 +473,19 @@ msgstr "Inwentarz"
 
 #: templates/base.html:109
 msgid "Provisioning"
-msgstr ""
+msgstr "Wdrażanie"
 
 #: templates/base.html:117
 msgid "Diagrams"
-msgstr ""
+msgstr "Diagramy"
 
 #: templates/base.html:160
 msgid "Administration"
-msgstr ""
+msgstr "Administratorzy"
 
 #: templates/base.html:247
 msgid "AutoCli Network Automation Tool"
-msgstr ""
+msgstr "AutoCli Narzędzie do automatyzacji sieci"
 
 #: templates/base_views/create_update_view.html:35
 msgid "Save and create new one"
@@ -509,43 +509,43 @@ msgstr "Nie ma nic do wyświetlania :("
 
 #: templates/base_views/list_view.html:137
 msgid "Actions"
-msgstr ""
+msgstr "Działania"
 
 #: templates/base_views/list_view.html:169
 msgid "First page"
-msgstr ""
+msgstr "Pierwsza strona"
 
 #: templates/base_views/list_view.html:172
 msgid "Precious page"
-msgstr ""
+msgstr "Poprzednia strona"
 
 #: templates/base_views/list_view.html:178
 msgid "This is first page"
-msgstr ""
+msgstr "To jest pierwsza strona"
 
 #: templates/base_views/list_view.html:185
 msgid "Page"
-msgstr ""
+msgstr "Strona"
 
 #: templates/base_views/list_view.html:185
 msgid "of"
-msgstr ""
+msgstr "z"
 
 #: templates/base_views/list_view.html:190
 msgid "Next page"
-msgstr ""
+msgstr "Następna strona"
 
 #: templates/base_views/list_view.html:193
 msgid "Last page"
-msgstr ""
+msgstr "Ostatnia strona"
 
 #: templates/base_views/list_view.html:199
 msgid "No more pages"
-msgstr ""
+msgstr "Nie ma więcej stron"
 
 #: venv/lib/python3.10/site-packages/django/contrib/messages/apps.py:7
 msgid "Messages"
-msgstr ""
+msgstr "Wiadomości"
 
 #: venv/lib/python3.10/site-packages/django/contrib/sitemaps/apps.py:8
 msgid "Site Maps"
