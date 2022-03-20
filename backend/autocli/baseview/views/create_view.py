@@ -20,6 +20,8 @@ class CreateView(BaseView, DjangoView):
     success_url = '/'
     page_name_action = _('Create a new')
 
+    field_set = None
+
     def post(self, request, *args, **kwargs):
         """ Overwrite post function. """
 

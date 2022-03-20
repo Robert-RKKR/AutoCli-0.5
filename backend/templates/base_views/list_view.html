@@ -93,8 +93,10 @@
 
                             <!-- Single model item header -->
                             <div class="model-item-header">
-                                {% if object.ico or object.ico == 0 %}
+                                {% if object.ico >= 0 %}
                                     <img class="box-header-svg" src="/{{ object.get_ico_display }}" alt="switch">
+                                {% elif object.ico == 'hexadecimal' %}
+                                    <div class="ico_hexadecimal" style='background: {{ object.hexadecimal }};'></div>
                                 {% endif %}
                                 <div>
                                     <h3><a href="{% url detail_link pk=object.pk %}">{{ object.name|title }}</a></h3>

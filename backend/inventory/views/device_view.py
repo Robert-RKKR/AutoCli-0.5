@@ -1,3 +1,6 @@
+# Django Import:
+from django.utils.translation import gettext_lazy as _
+
 # Application Import:
 from inventory.models.device_model import Device
 from inventory.filters.device_filter import ModelFilter

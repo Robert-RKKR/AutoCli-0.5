@@ -65,3 +65,4 @@ class Color(BaseModel):
         help_text=_('All credentials that belongs to current color.'),
         blank=True
     )
+    ico = 'hexadecimal'
